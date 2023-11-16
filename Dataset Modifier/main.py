@@ -30,7 +30,7 @@ def process_file(file_name, label_type, dataset_urls):
         df['Label'] = 0 if label_type == 'fake' else 1
     elif 'label' in df.columns:
         # the cases where the label is a string 'Real' or 'Fake'
-        df['Label'] = df['label'].apply(lambda x: 0 if str(x).strip().lower() == 'fake' else 1)
+        df['Label'] = df['label'].astype(str).apply(lambda x: 0 if x.strip().lower() in ['0', 'fake'] else 1)
     elif 'prediction' in df.columns:  # for argilla.csv
         df['Label'] = df['prediction'].apply(extract_label_from_prediction)
     else:
