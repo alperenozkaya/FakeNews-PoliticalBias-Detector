@@ -55,6 +55,19 @@ def process_file(file_name, label_type, dataset_urls):
 
     return df
 
+# function to get average length of text in a dataset
+def get_avg_len(df):
+    word_length = 0
+    count = 0
+    for text in df['Text']:
+        if pd.isna(text):
+            count += 1
+            continue
+        word_list = text.split()
+        word_length += len(word_list)
+        count += 1
+
+    return word_length / count
 
 # main function to combine datasets
 def combine_datasets(datasets, dataset_fake_or_real, dataset_urls):
@@ -64,6 +77,10 @@ def combine_datasets(datasets, dataset_fake_or_real, dataset_urls):
         print(f"Processing {dataset_name}...")
         label_type = dataset_fake_or_real.get(dataset_name, 'both')
         processed_df = process_file(dataset_name, label_type, dataset_urls)
+        
+        avg_len = get_avg_len(processed_df)
+        print(f'Average text length for {processed_df["Resource"][0]}: {avg_len}')
+        
         print(f"Finished processing {dataset_name}, shape: {processed_df.shape}")
         combined_df = pd.concat([combined_df, processed_df], ignore_index=True)
         print(f"Combined dataframe shape now: {combined_df.shape}")
@@ -77,7 +94,7 @@ def main():
         dataset_sources.dataset_fake_or_real,
         dataset_sources.dataset_urls
     )
-
+    print(f"Combined dataset average wordsize: {get_avg_len(final_dataset)}")
     # save the combined dataset
     final_dataset.to_csv('combined_dataset.csv', index=False)
     print(f"Combined dataset saved as combined_dataset.csv with {len(final_dataset)} rows.")
