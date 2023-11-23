@@ -25,12 +25,13 @@ def preprocess_data(data):
 # Load and preprocess JSON data
 data = load_json_line_by_line('combined_dataset_line_by_line.json')
 preprocess_data(data)
-
+# 0.7 => train, 0.3 => test/val combined
 # Split the data into training and a combined test/validation set
-train_data, test_val_data = train_test_split(data, test_size=0.3, random_state=42)
+train_data, test_val_data = train_test_split(data, test_size=0.4, random_state=42)
 
+# 0.15 => test, 0.15 =>val
 # Split the combined test/validation set into separate test and validation sets
-test_data, val_data = train_test_split(test_val_data, test_size=0.5, random_state=42)
+test_data, val_data = train_test_split(test_val_data, test_size=0.375, random_state=42)
 
 # Function to save data line by line
 def save_json_line_by_line(data, file_path):

@@ -137,8 +137,7 @@ def get_optimizer(config, params):
                         weight_decay=0, max_grad_norm=-1)
     else:
         raise TypeError(
-            "Unsupported tensor optimizer type: %s.Supported optimizer "
-            "type is: %s" % (config.optimizer_type, OptimizerType.str()))
+            "Unsupported tensor optimizer type: %s.Supported optimizer type is: %s" % (config.optimizer_type, OptimizerType.str()))
 
 
 def get_hierar_relations(hierar_taxonomy, label_map):
