@@ -136,7 +136,7 @@ def main():
                 dataset_sources.dataset_urls
             )
 
-            save_dir = 'formatted_datasets'
+            save_dir = '../JsonParser/formatted_datasets'
             if not os.path.exists(save_dir):
                 os.makedirs(save_dir)
 

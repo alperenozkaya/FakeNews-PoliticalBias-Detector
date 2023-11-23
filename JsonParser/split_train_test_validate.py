@@ -1,6 +1,7 @@
 import json
 from sklearn.model_selection import train_test_split
 
+
 # Function to load JSON data line by line
 def load_json_line_by_line(file_path):
     data = []
@@ -9,9 +10,11 @@ def load_json_line_by_line(file_path):
             data.append(json.loads(line))
     return data
 
+
 # Function to sanitize text by removing non-ASCII characters
 def sanitize_text(text):
     return text.encode('ascii', 'ignore').decode('ascii')
+
 
 # Function to rename labels and sanitize text
 def preprocess_data(data):
@@ -22,8 +25,10 @@ def preprocess_data(data):
         elif entry['doc_label'] == [1]:
             entry['doc_label'] = ['real']
 
+
 # Load and preprocess JSON data
-data = load_json_line_by_line('combined_dataset_line_by_line.json')
+# TODO: Create a function to process all files in a specificied directory...
+data = load_json_line_by_line('combined_dataset_line_by_line.json') # choose a file from formatted_data_sets_json
 preprocess_data(data)
 # 0.7 => train, 0.3 => test/val combined
 # Split the data into training and a combined test/validation set
@@ -33,12 +38,14 @@ train_data, test_val_data = train_test_split(data, test_size=0.4, random_state=4
 # Split the combined test/validation set into separate test and validation sets
 test_data, val_data = train_test_split(test_val_data, test_size=0.375, random_state=42)
 
+
 # Function to save data line by line
 def save_json_line_by_line(data, file_path):
     with open(file_path, 'w', encoding='utf-8') as file:
         for entry in data:
             json.dump(entry, file)
             file.write('\n')
+
 
 # Save the datasets to new JSON files
 save_json_line_by_line(train_data, 'data_train.json')

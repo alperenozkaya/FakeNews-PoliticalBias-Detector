@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e08646f4-20cd-4f20-b0c8-c8c786f4e825" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Dataset Modifier/datasets/dummy.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/FakeNews-PoliticalBias-Detector.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FakeNews-PoliticalBias-Detector.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dataset Modifier/formatted_datasets/dummy.txt" beforeDir="false" afterPath="$PROJECT_DIR$/JsonParser/formatted_datasets/dummy.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dataset Modifier/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dataset Modifier/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JsonParser/split_train_test_validate.py" beforeDir="false" afterPath="$PROJECT_DIR$/JsonParser/split_train_test_validate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JsonParser/tokenize_n_json.py" beforeDir="false" afterPath="$PROJECT_DIR$/JsonParser/tokenize_n_json.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +35,16 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/JsonParser/formatted_datasets_json" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\FakeNews-PoliticalBias-Detector\JsonParser\formatted_datasets_json" />
+      <recent name="D:\FakeNews-PoliticalBias-Detector\JsonParser" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\FakeNews-PoliticalBias-Detector\JsonParser" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -50,6 +60,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Dataset Modifier/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tokenize_n_json" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="FakeNews-PoliticalBias-Detector" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/JsonParser" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/JsonParser/tokenize_n_json.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -82,10 +113,12 @@
     <list>
       <item itemvalue="Python.main" />
       <item itemvalue="Python.try" />
+      <item itemvalue="Python.tokenize_n_json" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.tokenize_n_json" />
         <item itemvalue="Python.try" />
       </list>
     </recent_temporary>
