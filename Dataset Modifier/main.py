@@ -1,6 +1,10 @@
+import time
+
 import pandas as pd
 import json
 import dataset_sources
+import keyboard
+import os
 
 
 # function to extract label from prediction specifically in argilla.csv
@@ -51,6 +55,7 @@ def process_file(file_name, label_type, dataset_urls):
     for col in required_columns:
         if col not in df.columns:
             df[col] = ''
+    # drop row if no label
     df = df[required_columns].dropna(subset=['Label'])
 
     return df
@@ -88,16 +93,61 @@ def combine_datasets(datasets, dataset_fake_or_real, dataset_urls):
     return combined_df
 
 
+# function to format csv files separately
+def format_datasets(datasets, dataset_fake_or_real, dataset_urls):
+    formatted_df = pd.DataFrame(columns=['Title', 'Text', 'Label', 'Resource'])
+    formatted_datasets = []
+
+    for dataset_name in datasets:
+        print(f"Processing {dataset_name}...")
+        label_type = dataset_fake_or_real.get(dataset_name, 'both')
+        processed_df = process_file(dataset_name, label_type, dataset_urls)
+
+        avg_len = get_avg_len(processed_df)
+        print(f'Average text length for {processed_df["Resource"][0]}: {avg_len}')
+
+        print(f"Finished processing {dataset_name}, shape: {processed_df.shape}")
+        formatted_datasets.append(processed_df)
+        print(f"Formatted dataset shape now: {formatted_df.shape}")
+
+    return formatted_datasets
+
+
 def main():
-    final_dataset = combine_datasets(
-        dataset_sources.datasets,
-        dataset_sources.dataset_fake_or_real,
-        dataset_sources.dataset_urls
-    )
-    print(f"Combined dataset average wordsize: {get_avg_len(final_dataset)}")
-    # save the combined dataset
-    final_dataset.to_csv('combined_dataset.csv', index=False)
-    print(f"Combined dataset saved as combined_dataset.csv with {len(final_dataset)} rows.")
+
+    # choose to combine all datasets or process separately
+    print("Press '1' to combine all datasets or press '2' to process files separately")
+    while True:
+        if keyboard.is_pressed('1'):
+            final_dataset = combine_datasets(
+                dataset_sources.datasets,
+                dataset_sources.dataset_fake_or_real,
+                dataset_sources.dataset_urls
+            )
+            print(f"Combined dataset average wordsize: {get_avg_len(final_dataset)}")
+            # save the combined dataset
+            final_dataset.to_csv('combined_dataset.csv', index=False)
+            print(f"Combined dataset saved as combined_dataset.csv with {len(final_dataset)} rows.")
+            break
+        elif keyboard.is_pressed('2'):
+            formatted_datasets = format_datasets(
+                dataset_sources.datasets,
+                dataset_sources.dataset_fake_or_real,
+                dataset_sources.dataset_urls
+            )
+
+            save_dir = 'formatted_datasets'
+            if not os.path.exists(save_dir):
+                os.makedirs(save_dir)
+
+            for i in range(len(formatted_datasets)):
+                file_path = os.path.join(save_dir, dataset_sources.datasets[i])
+                formatted_datasets[i].to_csv(file_path, index=False)
+            break
+        else:
+            continue
+        # to reduce CPU load
+        time.sleep(0.01)
 
 
 if __name__ == '__main__':
