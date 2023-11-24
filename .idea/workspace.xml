@@ -7,11 +7,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JsonParser/split_train_test_validate.py" beforeDir="false" afterPath="$PROJECT_DIR$/JsonParser/split_train_test_validate.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NLPClassifierTool/conf/train.json" beforeDir="false" afterPath="$PROJECT_DIR$/NLPClassifierTool/conf/train.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLPClassifierTool/dict_rcv1/doc_char.dict" beforeDir="false" afterPath="$PROJECT_DIR$/NLPClassifierTool/dict_rcv1/doc_char.dict" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLPClassifierTool/dict_rcv1/doc_label.dict" beforeDir="false" afterPath="$PROJECT_DIR$/NLPClassifierTool/dict_rcv1/doc_label.dict" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLPClassifierTool/dict_rcv1/doc_token.dict" beforeDir="false" afterPath="$PROJECT_DIR$/NLPClassifierTool/dict_rcv1/doc_token.dict" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLPClassifierTool/log_test_rcv1_hierar" beforeDir="false" afterPath="$PROJECT_DIR$/NLPClassifierTool/log_test_rcv1_hierar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLPClassifierTool/probs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NLPClassifierTool/probs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLPClassifierTool/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLPClassifierTool/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +37,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -48,7 +45,7 @@
       <recent name="C:\Users\MONSTER\PycharmProjects\FakeNews-PoliticalBias-Detector\JsonParser\formatted_datasets_json" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.predict">
+  <component name="RunManager" selected="Python.train">
     <configuration name="eval" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="FakeNews-PoliticalBias-Detector" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -160,9 +157,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\MONSTER\AppData\Local\Programs\Python\Python39\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/NLPClassifierTool" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="net.ashald.envfile">
@@ -176,7 +173,7 @@
         </ENTRIES>
       </EXTENSION>
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/NLPClassifierTool/train.py" />
-      <option name="PARAMETERS" value="C:\Users\MONSTER\PycharmProjects\FakeNews-PoliticalBias-Detector\NLPClassifierTool\conf\train.json" />
+      <option name="PARAMETERS" value="D:\FakeNews-PoliticalBias-Detector\NLPClassifierTool\conf\train.json" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -237,13 +234,13 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.main" />
-      <item itemvalue="Python.try" />
       <item itemvalue="Python.train" />
-      <item itemvalue="Python.try (1)" />
-      <item itemvalue="Python.split_train_test_validate" />
       <item itemvalue="Python.eval" />
       <item itemvalue="Python.predict" />
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.try" />
+      <item itemvalue="Python.try (1)" />
+      <item itemvalue="Python.split_train_test_validate" />
     </list>
     <recent_temporary>
       <list>
@@ -275,7 +272,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

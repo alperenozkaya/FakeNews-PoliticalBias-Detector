@@ -108,13 +108,21 @@ class ClassificationTrainer(object):
     def run(self, data_loader, model, optimizer, stage,
             epoch, mode=ModeType.EVAL):
         is_multi = False
-        # multi-label classifcation
+        # multi-label classification
         if self.conf.task_info.label_type == ClassificationType.MULTI_LABEL:
             is_multi = True
         predict_probs = []
         standard_labels = []
         num_batch = data_loader.__len__()
         total_loss = 0.
+
+        # log the info about model
+
+        model_name = config.model_name
+        batch_size = config.train.batch_size
+        learning_rate = config.train.learning_rate
+        self.logger.info(model_name, batch_size, learning_rate)
+
         for batch in data_loader:
             # hierarchical classification using hierarchy penalty loss
             if self.conf.task_info.hierarchical:
