@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e08646f4-20cd-4f20-b0c8-c8c786f4e825" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/FakeNews-PoliticalBias-Detector.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FakeNews-PoliticalBias-Detector.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dataset Modifier/formatted_datasets/dummy.txt" beforeDir="false" afterPath="$PROJECT_DIR$/JsonParser/formatted_datasets/dummy.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dataset Modifier/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dataset Modifier/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JsonParser/split_train_test_validate.py" beforeDir="false" afterPath="$PROJECT_DIR$/JsonParser/split_train_test_validate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JsonParser/tokenize_n_json.py" beforeDir="false" afterPath="$PROJECT_DIR$/JsonParser/tokenize_n_json.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLPClassifierTool/conf/train.json" beforeDir="false" afterPath="$PROJECT_DIR$/NLPClassifierTool/conf/train.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLPClassifierTool/dict_rcv1/doc_char.dict" beforeDir="false" afterPath="$PROJECT_DIR$/NLPClassifierTool/dict_rcv1/doc_char.dict" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLPClassifierTool/dict_rcv1/doc_label.dict" beforeDir="false" afterPath="$PROJECT_DIR$/NLPClassifierTool/dict_rcv1/doc_label.dict" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLPClassifierTool/dict_rcv1/doc_token.dict" beforeDir="false" afterPath="$PROJECT_DIR$/NLPClassifierTool/dict_rcv1/doc_token.dict" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLPClassifierTool/log_test_rcv1_hierar" beforeDir="false" afterPath="$PROJECT_DIR$/NLPClassifierTool/log_test_rcv1_hierar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLPClassifierTool/probs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NLPClassifierTool/probs.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +32,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2YXZVly5ZqmFnqqpcOojVWlNvWX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -35,18 +40,46 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/JsonParser/formatted_datasets_json" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\FakeNews-PoliticalBias-Detector\JsonParser\formatted_datasets_json" />
-      <recent name="D:\FakeNews-PoliticalBias-Detector\JsonParser" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\FakeNews-PoliticalBias-Detector\JsonParser" />
+      <recent name="C:\Users\MONSTER\PycharmProjects\FakeNews-PoliticalBias-Detector\NLPClassifierTool\data" />
+      <recent name="C:\Users\MONSTER\PycharmProjects\FakeNews-PoliticalBias-Detector\JsonParser\formatted_datasets_json" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.predict">
+    <configuration name="eval" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="FakeNews-PoliticalBias-Detector" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/NLPClassifierTool" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        </ENTRIES>
+      </EXTENSION>
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/NLPClassifierTool/eval.py" />
+      <option name="PARAMETERS" value="C:\Users\MONSTER\PycharmProjects\FakeNews-PoliticalBias-Detector\NLPClassifierTool\conf\train.json" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FakeNews-PoliticalBias-Detector" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -68,7 +101,38 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="tokenize_n_json" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="predict" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="FakeNews-PoliticalBias-Detector" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/NLPClassifierTool" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        </ENTRIES>
+      </EXTENSION>
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/NLPClassifierTool/predict.py" />
+      <option name="PARAMETERS" value="C:\Users\MONSTER\PycharmProjects\FakeNews-PoliticalBias-Detector\NLPClassifierTool\conf\train.json C:\Users\MONSTER\PycharmProjects\FakeNews-PoliticalBias-Detector\NLPClassifierTool\data\data_test.json" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="split_train_test_validate" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FakeNews-PoliticalBias-Detector" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -80,7 +144,69 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/JsonParser/tokenize_n_json.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/JsonParser/split_train_test_validate.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="train" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="FakeNews-PoliticalBias-Detector" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\MONSTER\AppData\Local\Programs\Python\Python39\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/NLPClassifierTool" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        </ENTRIES>
+      </EXTENSION>
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/NLPClassifierTool/train.py" />
+      <option name="PARAMETERS" value="C:\Users\MONSTER\PycharmProjects\FakeNews-PoliticalBias-Detector\NLPClassifierTool\conf\train.json" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="try (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="FakeNews-PoliticalBias-Detector" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\MONSTER\AppData\Local\Programs\Python\Python39\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/NLPClassifierTool/data" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        </ENTRIES>
+      </EXTENSION>
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/NLPClassifierTool/data/try.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -113,12 +239,17 @@
     <list>
       <item itemvalue="Python.main" />
       <item itemvalue="Python.try" />
-      <item itemvalue="Python.tokenize_n_json" />
+      <item itemvalue="Python.train" />
+      <item itemvalue="Python.try (1)" />
+      <item itemvalue="Python.split_train_test_validate" />
+      <item itemvalue="Python.eval" />
+      <item itemvalue="Python.predict" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.split_train_test_validate" />
+        <item itemvalue="Python.try (1)" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.tokenize_n_json" />
         <item itemvalue="Python.try" />
       </list>
     </recent_temporary>
@@ -144,5 +275,16 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/JsonParser/tokenize_n_json.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

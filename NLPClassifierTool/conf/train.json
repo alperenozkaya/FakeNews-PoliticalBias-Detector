@@ -50,7 +50,7 @@
   "train": {
     "batch_size": 32,
     "start_epoch": 1,
-    "num_epochs": 10,
+    "num_epochs": 5,
     "num_epochs_static_embedding": 0,
     "decay_steps": 1000,
     "decay_rate": 1.0,
@@ -110,7 +110,7 @@
     "batch_size": 1024,
     "is_flat": true,
     "top_k": 100,
-    "model_dir": "checkpoint_dir_rcv1/TextCNN_best"
+    "model_dir": "checkpoint_dir_transformer/Transformer_6"
   },
   "TextVDCNN": {
     "vdcnn_depth": 9,
