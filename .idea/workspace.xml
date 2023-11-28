@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e08646f4-20cd-4f20-b0c8-c8c786f4e825" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/FakeNews-PoliticalBias-Detector.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FakeNews-PoliticalBias-Detector.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JsonParser/split_train_test_validate.py" beforeDir="false" afterPath="$PROJECT_DIR$/JsonParser/split_train_test_validate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLPClassifierTool/conf/train.json" beforeDir="false" afterPath="$PROJECT_DIR$/NLPClassifierTool/conf/train.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLPClassifierTool/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLPClassifierTool/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dataset Modifier/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dataset Modifier/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +41,7 @@
       <recent name="C:\Users\MONSTER\PycharmProjects\FakeNews-PoliticalBias-Detector\JsonParser\formatted_datasets_json" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.train">
+  <component name="RunManager" selected="Python.main">
     <configuration name="eval" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="FakeNews-PoliticalBias-Detector" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -244,9 +240,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.split_train_test_validate" />
         <item itemvalue="Python.try (1)" />
-        <item itemvalue="Python.main" />
         <item itemvalue="Python.try" />
       </list>
     </recent_temporary>

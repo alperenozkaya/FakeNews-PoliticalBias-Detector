@@ -113,7 +113,28 @@ def format_datasets(datasets, dataset_fake_or_real, dataset_urls):
     return formatted_datasets
 
 
+import gdown
+
+
+def download_datasets_from_google_drive():
+    datasets_drive_url = 'https://drive.google.com/drive/folders/1gYQ7PU6LfilfOIPoUVk0k7W4RTLxKNUY?usp=drive_link'
+    if datasets_drive_url.split('/')[-1] == '?usp=drive_link':
+        datasets_drive_url = datasets_drive_url.replace('?usp=drive_link', '')
+
+    gdown.download_folder(datasets_drive_url)
+    print('')
+
+
 def main():
+
+    print("Press '1' to download datasets from Google Drive or press '2' to use existing files")
+    while True:
+        if keyboard.is_pressed('1'):
+            download_datasets_from_google_drive()
+            break
+        elif keyboard.is_pressed('2'):
+            break
+        time.sleep(0.01)
 
     # choose to combine all datasets or process separately
     print("Press '1' to combine all datasets or press '2' to process files separately")
