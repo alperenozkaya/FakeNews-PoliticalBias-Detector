@@ -2,17 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e08646f4-20cd-4f20-b0c8-c8c786f4e825" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Dataset Modifier/flip.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JsonParser/flip.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/FakeNews-PoliticalBias-Detector.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FakeNews-PoliticalBias-Detector.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dataset Modifier/dataset_sources.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dataset Modifier/dataset_sources.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dataset Modifier/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dataset Modifier/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JsonParser/formatted_datasets/dummy.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/JsonParser/split_train_test_validate.py" beforeDir="false" afterPath="$PROJECT_DIR$/JsonParser/split_train_test_validate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JsonParser/tokenize_n_json.py" beforeDir="false" afterPath="$PROJECT_DIR$/JsonParser/tokenize_n_json.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NLPClassifierTool/conf/train.json" beforeDir="false" afterPath="$PROJECT_DIR$/NLPClassifierTool/conf/train.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLPClassifierTool/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLPClassifierTool/eval.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLPClassifierTool/eval.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLPClassifierTool/log_test_rcv1_hierar" beforeDir="false" afterPath="$PROJECT_DIR$/NLPClassifierTool/log_test_rcv1_hierar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLPClassifierTool/predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLPClassifierTool/predict.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLPClassifierTool/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLPClassifierTool/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLPClassifierTool/dict_rcv1/doc_char.dict" beforeDir="false" afterPath="$PROJECT_DIR$/NLPClassifierTool/dict_rcv1/doc_char.dict" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLPClassifierTool/dict_rcv1/doc_label.dict" beforeDir="false" afterPath="$PROJECT_DIR$/NLPClassifierTool/dict_rcv1/doc_label.dict" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLPClassifierTool/dict_rcv1/doc_token.dict" beforeDir="false" afterPath="$PROJECT_DIR$/NLPClassifierTool/dict_rcv1/doc_token.dict" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLPClassifierTool/probs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NLPClassifierTool/probs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/dataset_modifier.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/dataset_modifier.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +30,13 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="02ff4ef9180a97baa6c4ee16d4e672dd3d84a343" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -54,7 +63,7 @@
       <recent name="C:\Users\MONSTER\PycharmProjects\FakeNews-PoliticalBias-Detector\JsonParser\formatted_datasets_json" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.split_train_test_validate">
+  <component name="RunManager" selected="Python.train">
     <configuration name="change_json" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FakeNews-PoliticalBias-Detector" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -224,7 +233,7 @@
         </ENTRIES>
       </EXTENSION>
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/NLPClassifierTool/train.py" />
-      <option name="PARAMETERS" value="D:\FakeNews-PoliticalBias-Detector\NLPClassifierTool\conf\train.json" />
+      <option name="PARAMETERS" value="C:\Users\MONSTER\PycharmProjects\FakeNews-PoliticalBias-Detector\NLPClassifierTool\conf\train.json" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -304,5 +313,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

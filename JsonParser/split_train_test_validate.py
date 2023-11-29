@@ -56,9 +56,9 @@ def update_train_config(dataset_name):
 
     # change train, test, val file paths
 
-    data['data']['train_json_files'] = f'{dataset_name}-data_train.json'
-    data['data']['validate_json_files'] = f'{dataset_name}-data_validate.json'
-    data['data']['test_json_files'] = f'{dataset_name}-data_test.json'
+    data['data']['train_json_files'][0] = f'data/{dataset_name}-data_train.json'
+    data['data']['validate_json_files'][0] = f'data/{dataset_name}-data_val.json'
+    data['data']['test_json_files'][0] = f'data/{dataset_name}-data_test.json'
 
     with open('../NLPClassifierTool/conf/train.json', 'w') as file:
         json.dump(data, file, indent=4)
@@ -94,4 +94,4 @@ def main():
 
 if __name__ == '__main__':
     config = Config(config_file='../config/dataset_modifier.json')
-    update_train_config('sample')
+    main()

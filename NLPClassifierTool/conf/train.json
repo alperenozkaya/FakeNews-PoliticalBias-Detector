@@ -5,14 +5,20 @@
         "hierar_taxonomy": "data/rcv1.taxonomy",
         "hierar_penalty": 1e-06
     },
-    "device": "cpu",
+    "device": "cuda",
     "model_name": "Transformer",
     "checkpoint_dir": "checkpoint_dir_transformer",
     "model_dir": "trained_model_rcv1",
     "data": {
-        "train_json_files": "sample-data_train.json",
-        "validate_json_files": "sample-data_validate.json",
-        "test_json_files": "sample-data_test.json",
+        "train_json_files": [
+            "data/combined_dataset-data_train.json"
+        ],
+        "validate_json_files": [
+            "data/combined_dataset-data_val.json"
+        ],
+        "test_json_files": [
+            "data/combined_dataset-data_test.json"
+        ],
         "generate_dict_using_json_files": true,
         "generate_dict_using_all_json_files": true,
         "generate_dict_using_pretrained_embedding": false,

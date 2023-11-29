@@ -340,3 +340,4 @@ Loss is: 0.000011.
 2023-11-23 22:58:14 : WARNING  Performance is precision: 0.998189, recall: 0.998189, fscore: 0.998189, right: 38576, predict: 38646, standard: 38646.
 2023-11-23 23:00:43 : WARNING  Performance is precision: 0.991228, recall: 0.991228, fscore: 0.991228, right: 113, predict: 114, standard: 114.
 2023-11-29 20:11:26 : WARNING  model name: Transformer batch_size: 32 learning_rate: 0.002
+2023-11-29 22:33:03 : WARNING  model name: Transformer batch_size: 32 learning_rate: 0.002
