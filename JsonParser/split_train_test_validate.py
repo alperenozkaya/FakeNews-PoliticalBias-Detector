@@ -56,9 +56,17 @@ def update_train_config(dataset_name):
 
     # change train, test, val file paths
 
+<<<<<<< Updated upstream
     data['data']['train_json_files'][0] = f'data/{dataset_name}-data_train.json'
     data['data']['validate_json_files'][0] = f'data/{dataset_name}-data_val.json'
     data['data']['test_json_files'][0] = f'data/{dataset_name}-data_test.json'
+=======
+    data['data']['train_json_files'] = f'{dataset_name}-data_train.json'
+    data['data']['validate_json_files'] = f'{dataset_name}-data_val.json'
+    data['data']['test_json_files'] = f'{dataset_name}-data_test.json'
+    # add dataset name to json file
+    data['dataset_name'] = dataset_name
+>>>>>>> Stashed changes
 
     with open('../NLPClassifierTool/conf/train.json', 'w') as file:
         json.dump(data, file, indent=4)
