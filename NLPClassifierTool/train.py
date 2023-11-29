@@ -11,7 +11,7 @@ is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND
 or implied. See the License for thespecific language governing permissions and limitations under
 the License.
 """
-
+import json
 import os
 import shutil
 import sys
@@ -94,15 +94,41 @@ class ClassificationTrainer(object):
             self.hierar_relations = get_hierar_relations(
                     self.conf.task_info.hierar_taxonomy, label_map)
 
+    def log_parameters(self):
+        dataset_name = config.dataset_name
+        model_name = config.model_name
+
+        batch_size = config.train.batch_size
+        num_epochs = config.train.num_epochs
+        loss_type = config.train.loss_type
+
+        optimizer = config.optimizer.optimizer_type
+        learning_rate = config.optimizer.learning_rate
+
+        with open('conf/train.json', 'r') as file:
+            data = json.load(file)
+
+        # Step 2: Access the 'Transformer' key
+        model_parameters = data[model_name]
+
+        self.logger.warn(f'dataset name: {dataset_name} model name: {model_name}\n'
+                         f'model_parameters: {model_parameters}\n'
+                         f'batch size: {batch_size}\nnum_epochs: {num_epochs}\nloss type: {loss_type}\n'
+                         f'optimizer: {optimizer}\nlearning rate: {learning_rate}\n'
+            )
+
     def train(self, data_loader, model, optimizer, stage, epoch):
         model.update_lr(optimizer, epoch)
         model.train()
+        self.log_parameters()
         return self.run(data_loader, model, optimizer, stage, epoch,
                         ModeType.TRAIN)
 
     def eval(self, data_loader, model, optimizer, stage, epoch):
         model.eval()
         return self.run(data_loader, model, optimizer, stage, epoch)
+
+
 
     def run(self, data_loader, model, optimizer, stage,
             epoch, mode=ModeType.EVAL):
@@ -115,12 +141,6 @@ class ClassificationTrainer(object):
         num_batch = data_loader.__len__()
         total_loss = 0.
 
-        # log the info about model
-
-        model_name = config.model_name
-        batch_size = config.train.batch_size
-        learning_rate = config.optimizer.learning_rate
-        self.logger.warn(f'model name: {model_name} batch_size: {batch_size} learning_rate: {learning_rate}')
 
         for batch in data_loader:
             # hierarchical classification using hierarchy penalty loss
@@ -250,7 +270,7 @@ def train(conf):
         time_used = time.time() - start_time
         logger.info("Epoch %d cost time: %d second" % (epoch, time_used))
 
-    # best model on validateion set
+    # best model on validation set
     best_epoch_file_name = model_file_prefix + "_" + str(best_epoch)
     best_file_name = model_file_prefix + "_best"
     shutil.copyfile(best_epoch_file_name, best_file_name)

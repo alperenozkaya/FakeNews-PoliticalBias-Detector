@@ -5,26 +5,20 @@
         "hierar_taxonomy": "data/rcv1.taxonomy",
         "hierar_penalty": 1e-06
     },
-    "device": "cuda",
+    "device": "cpu",
     "model_name": "Transformer",
     "checkpoint_dir": "checkpoint_dir_transformer",
     "model_dir": "trained_model_rcv1",
     "data": {
-<<<<<<< Updated upstream
         "train_json_files": [
-            "data/combined_dataset-data_train.json"
+            "data/BuzzFeed_fake_news_content-data_train.json"
         ],
         "validate_json_files": [
-            "data/combined_dataset-data_val.json"
+            "data/BuzzFeed_fake_news_content-data_val.json"
         ],
         "test_json_files": [
-            "data/combined_dataset-data_test.json"
+            "data/BuzzFeed_fake_news_content-data_test.json"
         ],
-=======
-        "train_json_files": "sample-data_train.json",
-        "validate_json_files": "sample-data_val.json",
-        "test_json_files": "sample-data_test.json",
->>>>>>> Stashed changes
         "generate_dict_using_json_files": true,
         "generate_dict_using_all_json_files": true,
         "generate_dict_using_pretrained_embedding": false,
@@ -176,5 +170,5 @@
         "logger_file": "log_test_rcv1_hierar",
         "log_level": "warn"
     },
-    "dataset_name": "sample"
+    "dataset_name": "BuzzFeed_fake_news_content"
 }

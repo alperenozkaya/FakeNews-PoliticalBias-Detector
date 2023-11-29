@@ -1,12 +1,12 @@
 {
     "dataset_modifier": {
         "download_from_gdrive": false,
-        "combine_datasets": true,
+        "combine_datasets": false,
         "formatted_csv_save_dir": "../JsonParser/formatted_datasets"
     },
     "json_parser": {
         "input_dir": "formatted_datasets",
         "output_dir": "formatted_datasets_json",
-        "dataset_name": "combined_dataset.json"
+        "dataset_name": "BuzzFeed_fake_news_content.json"
     }
 }

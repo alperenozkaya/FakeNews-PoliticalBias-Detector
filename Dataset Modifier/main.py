@@ -136,6 +136,7 @@ def main():
     if config.dataset_modifier.download_from_gdrive is True:
         download_datasets_from_google_drive()
 
+    save_dir = config.dataset_modifier.formatted_csv_save_dir
     # whether to combine all datasets or process separately
     if config.dataset_modifier.combine_datasets is True:
         final_dataset = combine_datasets(
@@ -145,7 +146,10 @@ def main():
         )
         print(f"Combined dataset average wordsize: {get_avg_len(final_dataset)}")
         # save the combined dataset
-        final_dataset.to_csv('combined_dataset.csv', index=False)
+        if not os.path.exists(save_dir):
+            os.makedirs(save_dir)
+        file_path = os.path.join(save_dir, 'combined_dataset.csv')
+        final_dataset.to_csv(file_path, index=False)
         print(f"Combined dataset saved as combined_dataset.csv with {len(final_dataset)} rows.")
     else:
         formatted_datasets = format_datasets(
@@ -154,7 +158,6 @@ def main():
             dataset_sources.dataset_urls
         )
 
-        save_dir = config.dataset_modifier.formatted_csv_save_dir
         if not os.path.exists(save_dir):
             os.makedirs(save_dir)
 
