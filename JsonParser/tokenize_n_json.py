@@ -3,6 +3,7 @@ import os
 import pandas as pd
 import nltk
 import json
+from config import Config
 
 # Ensure NLTK tokenizers are downloaded
 nltk.download('punkt')
@@ -40,8 +41,8 @@ def process_file(file_path, output_dir):
 
 def main():
     # Load CSV files
-    input_dir = 'formatted_datasets'
-    output_dir = 'formatted_datasets_json'
+    input_dir = config.json_parser.input_dir
+    output_dir = config.json_parser.output_dir
 
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
@@ -55,4 +56,5 @@ def main():
 
 
 if __name__ == '__main__':
+    config = Config(config_file='../config/dataset_modifier.json')
     main()

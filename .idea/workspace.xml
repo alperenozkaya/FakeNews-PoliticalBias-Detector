@@ -3,7 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="e08646f4-20cd-4f20-b0c8-c8c786f4e825" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dataset Modifier/dataset_sources.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dataset Modifier/dataset_sources.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dataset Modifier/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dataset Modifier/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JsonParser/split_train_test_validate.py" beforeDir="false" afterPath="$PROJECT_DIR$/JsonParser/split_train_test_validate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JsonParser/tokenize_n_json.py" beforeDir="false" afterPath="$PROJECT_DIR$/JsonParser/tokenize_n_json.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLPClassifierTool/conf/train.json" beforeDir="false" afterPath="$PROJECT_DIR$/NLPClassifierTool/conf/train.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLPClassifierTool/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLPClassifierTool/eval.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLPClassifierTool/eval.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLPClassifierTool/log_test_rcv1_hierar" beforeDir="false" afterPath="$PROJECT_DIR$/NLPClassifierTool/log_test_rcv1_hierar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLPClassifierTool/predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLPClassifierTool/predict.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLPClassifierTool/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLPClassifierTool/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,16 +41,41 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Dataset Modifier" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\FakeNews-PoliticalBias-Detector\Dataset Modifier" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\FakeNews-PoliticalBias-Detector" />
       <recent name="C:\Users\MONSTER\PycharmProjects\FakeNews-PoliticalBias-Detector\NLPClassifierTool\data" />
       <recent name="C:\Users\MONSTER\PycharmProjects\FakeNews-PoliticalBias-Detector\JsonParser\formatted_datasets_json" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.split_train_test_validate">
+    <configuration name="change_json" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="FakeNews-PoliticalBias-Detector" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Dataset Modifier" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Dataset Modifier/change_json.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="eval" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="FakeNews-PoliticalBias-Detector" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -118,6 +152,27 @@
       </EXTENSION>
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/NLPClassifierTool/predict.py" />
       <option name="PARAMETERS" value="C:\Users\MONSTER\PycharmProjects\FakeNews-PoliticalBias-Detector\NLPClassifierTool\conf\train.json C:\Users\MONSTER\PycharmProjects\FakeNews-PoliticalBias-Detector\NLPClassifierTool\data\data_test.json" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="random_10000" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="FakeNews-PoliticalBias-Detector" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Dataset Modifier" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Dataset Modifier/random_10000.py" />
+      <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -208,42 +263,23 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="try" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="FakeNews-PoliticalBias-Detector" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\jawsb\AppData\Local\Programs\Python\Python310\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Dataset Modifier" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Dataset Modifier/try.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.train" />
       <item itemvalue="Python.eval" />
       <item itemvalue="Python.predict" />
       <item itemvalue="Python.main" />
-      <item itemvalue="Python.try" />
       <item itemvalue="Python.try (1)" />
       <item itemvalue="Python.split_train_test_validate" />
+      <item itemvalue="Python.random_10000" />
+      <item itemvalue="Python.change_json" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main" />
         <item itemvalue="Python.split_train_test_validate" />
+        <item itemvalue="Python.change_json" />
+        <item itemvalue="Python.random_10000" />
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.try (1)" />
-        <item itemvalue="Python.try" />
       </list>
     </recent_temporary>
   </component>
@@ -268,15 +304,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/JsonParser/tokenize_n_json.py</url>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

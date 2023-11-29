@@ -13,7 +13,6 @@ the License.
 """
 
 import sys
-import time
 
 import torch
 from torch.utils.data import DataLoader
@@ -36,9 +35,7 @@ from model.classification.transformer import Transformer
 from model.classification.dpcnn import DPCNN
 from model.classification.attentive_convolution import AttentiveConvNet
 from model.classification.region_embedding import RegionEmbedding
-from model.classification.hmcn import HMCN
-from model.model_util import get_optimizer, get_hierar_relations
-from util import ModeType
+from model.model_util import get_optimizer
 
 ClassificationDataset, ClassificationCollator, FastTextCollator, cEvaluator,
 FastText, TextCNN, TextRNN, TextRCNN, DRNN, TextVDCNN, Transformer, DPCNN,

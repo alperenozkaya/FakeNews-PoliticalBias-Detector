@@ -1,3 +1,4 @@
+import sys
 import time
 
 import pandas as pd
@@ -5,6 +6,7 @@ import json
 import dataset_sources
 import keyboard
 import os
+from config import Config
 
 
 # function to extract label from prediction specifically in argilla.csv
@@ -60,6 +62,7 @@ def process_file(file_name, label_type, dataset_urls):
 
     return df
 
+
 # function to get average length of text in a dataset
 def get_avg_len(df):
     word_length = 0
@@ -73,6 +76,7 @@ def get_avg_len(df):
         count += 1
 
     return word_length / count
+
 
 # main function to combine datasets
 def combine_datasets(datasets, dataset_fake_or_real, dataset_urls):
@@ -127,49 +131,38 @@ def download_datasets_from_google_drive():
 
 def main():
 
-    print("Press '1' to download datasets from Google Drive or press '2' to use existing files")
-    while True:
-        if keyboard.is_pressed('1'):
-            download_datasets_from_google_drive()
-            break
-        elif keyboard.is_pressed('2'):
-            break
-        time.sleep(0.01)
 
-    # choose to combine all datasets or process separately
-    print("Press '1' to combine all datasets or press '2' to process files separately")
-    while True:
-        if keyboard.is_pressed('1'):
-            final_dataset = combine_datasets(
-                dataset_sources.datasets,
-                dataset_sources.dataset_fake_or_real,
-                dataset_sources.dataset_urls
-            )
-            print(f"Combined dataset average wordsize: {get_avg_len(final_dataset)}")
-            # save the combined dataset
-            final_dataset.to_csv('combined_dataset.csv', index=False)
-            print(f"Combined dataset saved as combined_dataset.csv with {len(final_dataset)} rows.")
-            break
-        elif keyboard.is_pressed('2'):
-            formatted_datasets = format_datasets(
-                dataset_sources.datasets,
-                dataset_sources.dataset_fake_or_real,
-                dataset_sources.dataset_urls
-            )
+    # download csv datasets from gdrive
+    if config.dataset_modifier.download_from_gdrive is True:
+        download_datasets_from_google_drive()
 
-            save_dir = '../JsonParser/formatted_datasets'
-            if not os.path.exists(save_dir):
-                os.makedirs(save_dir)
+    # whether to combine all datasets or process separately
+    if config.dataset_modifier.combine_datasets is True:
+        final_dataset = combine_datasets(
+            dataset_sources.datasets,
+            dataset_sources.dataset_fake_or_real,
+            dataset_sources.dataset_urls
+        )
+        print(f"Combined dataset average wordsize: {get_avg_len(final_dataset)}")
+        # save the combined dataset
+        final_dataset.to_csv('combined_dataset.csv', index=False)
+        print(f"Combined dataset saved as combined_dataset.csv with {len(final_dataset)} rows.")
+    else:
+        formatted_datasets = format_datasets(
+            dataset_sources.datasets,
+            dataset_sources.dataset_fake_or_real,
+            dataset_sources.dataset_urls
+        )
 
-            for i in range(len(formatted_datasets)):
-                file_path = os.path.join(save_dir, dataset_sources.datasets[i])
-                formatted_datasets[i].to_csv(file_path, index=False)
-            break
-        else:
-            continue
-        # to reduce CPU load
-        time.sleep(0.01)
+        save_dir = config.dataset_modifier.formatted_csv_save_dir
+        if not os.path.exists(save_dir):
+            os.makedirs(save_dir)
+
+        for i in range(len(formatted_datasets)):
+            file_path = os.path.join(save_dir, dataset_sources.datasets[i])
+            formatted_datasets[i].to_csv(file_path, index=False)
 
 
 if __name__ == '__main__':
+    config = Config(config_file='../config/dataset_modifier.json')
     main()

@@ -15,12 +15,10 @@ the License.
 import codecs
 import math
 import numpy as np
-import os
 import sys
 import json
 
 import torch
-from torch.utils.data import DataLoader
 
 from config import Config
 from dataset.classification_dataset import ClassificationDataset
@@ -37,7 +35,6 @@ from model.classification.transformer import Transformer
 from model.classification.dpcnn import DPCNN
 from model.classification.attentive_convolution import AttentiveConvNet
 from model.classification.region_embedding import RegionEmbedding
-from model.model_util import get_optimizer, get_hierar_relations
 
 ClassificationDataset, ClassificationCollator, FastTextCollator,FastText, TextCNN, TextRNN, TextRCNN, DRNN, TextVDCNN, Transformer, DPCNN, AttentiveConvNet, RegionEmbedding
 

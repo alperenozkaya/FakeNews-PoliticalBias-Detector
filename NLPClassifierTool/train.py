@@ -38,7 +38,6 @@ from model.classification.transformer import Transformer
 from model.classification.dpcnn import DPCNN
 from model.classification.attentive_convolution import AttentiveConvNet
 from model.classification.region_embedding import RegionEmbedding
-from model.classification.hmcn import HMCN
 from model.loss import ClassificationLoss
 from model.model_util import get_optimizer, get_hierar_relations
 from util import ModeType
@@ -120,8 +119,8 @@ class ClassificationTrainer(object):
 
         model_name = config.model_name
         batch_size = config.train.batch_size
-        learning_rate = config.train.learning_rate
-        self.logger.info(model_name, batch_size, learning_rate)
+        learning_rate = config.optimizer.learning_rate
+        self.logger.warn(f'model name: {model_name} batch_size: {batch_size} learning_rate: {learning_rate}')
 
         for batch in data_loader:
             # hierarchical classification using hierarchy penalty loss
