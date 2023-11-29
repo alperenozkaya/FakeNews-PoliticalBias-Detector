@@ -341,3 +341,187 @@ Loss is: 0.000011.
 2023-11-23 23:00:43 : WARNING  Performance is precision: 0.991228, recall: 0.991228, fscore: 0.991228, right: 113, predict: 114, standard: 114.
 
 
+2023-11-30 00:38:06 : WARNING  dataset name: BuzzFeed_fake_news_content model name: Transformer
+model_parameters: {'d_inner': 128, 'd_k': 32, 'd_v': 32, 'n_head': 4, 'n_layers': 1, 'dropout': 0.1, 'use_star': True}
+batch size: 32
+num_epochs: 5
+loss type: SoftmaxCrossEntropy
+optimizer: Adam
+learning rate: 0.002
+
+2023-11-30 00:38:25 : WARNING  Train performance at epoch 1 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 52, predict: 52, standard: 52.
+Loss is: 0.000000.
+2023-11-30 00:38:34 : WARNING  Validate performance at epoch 1 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 14, predict: 14, standard: 14.
+Loss is: 0.000000.
+2023-11-30 00:38:43 : WARNING  test performance at epoch 1 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 21, predict: 21, standard: 21.
+Loss is: 0.000000.
+2023-11-30 00:38:43 : WARNING  dataset name: BuzzFeed_fake_news_content model name: Transformer
+model_parameters: {'d_inner': 128, 'd_k': 32, 'd_v': 32, 'n_head': 4, 'n_layers': 1, 'dropout': 0.1, 'use_star': True}
+batch size: 32
+num_epochs: 5
+loss type: SoftmaxCrossEntropy
+optimizer: Adam
+learning rate: 0.002
+
+2023-11-30 00:51:35 : WARNING  dataset name: BuzzFeed_fake_news_content model name: Transformer
+model_parameters: {'d_inner': 128, 'd_k': 32, 'd_v': 32, 'n_head': 4, 'n_layers': 1, 'dropout': 0.1, 'use_star': True}
+batch size: 32
+num_epochs: 5
+loss type: SoftmaxCrossEntropy
+optimizer: Adam
+learning rate: 0.002
+
+2023-11-30 00:51:44 : WARNING  dataset name: BuzzFeed_fake_news_content model name: Transformer
+model_parameters: {'d_inner': 128, 'd_k': 32, 'd_v': 32, 'n_head': 4, 'n_layers': 1, 'dropout': 0.1, 'use_star': True}
+batch size: 32
+num_epochs: 5
+loss type: SoftmaxCrossEntropy
+optimizer: Adam
+learning rate: 0.002
+
+2023-11-30 00:51:54 : WARNING  Train performance at epoch 1 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 52, predict: 52, standard: 52.
+Loss is: 0.000000.
+2023-11-30 00:51:54 : WARNING  dataset name: BuzzFeed_fake_news_content model name: Transformer
+model_parameters: {'d_inner': 128, 'd_k': 32, 'd_v': 32, 'n_head': 4, 'n_layers': 1, 'dropout': 0.1, 'use_star': True}
+batch size: 32
+num_epochs: 5
+loss type: SoftmaxCrossEntropy
+optimizer: Adam
+learning rate: 0.002
+
+2023-11-30 00:52:02 : WARNING  Validate performance at epoch 1 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 14, predict: 14, standard: 14.
+Loss is: 0.000000.
+2023-11-30 00:52:02 : WARNING  dataset name: BuzzFeed_fake_news_content model name: Transformer
+model_parameters: {'d_inner': 128, 'd_k': 32, 'd_v': 32, 'n_head': 4, 'n_layers': 1, 'dropout': 0.1, 'use_star': True}
+batch size: 32
+num_epochs: 5
+loss type: SoftmaxCrossEntropy
+optimizer: Adam
+learning rate: 0.002
+
+2023-11-30 00:52:11 : WARNING  test performance at epoch 1 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 21, predict: 21, standard: 21.
+Loss is: 0.000000.
+2023-11-30 00:52:30 : WARNING  Train performance at epoch 2 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 52, predict: 52, standard: 52.
+Loss is: 0.000000.
+2023-11-30 00:52:38 : WARNING  Validate performance at epoch 2 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 14, predict: 14, standard: 14.
+Loss is: 0.000000.
+2023-11-30 00:52:48 : WARNING  test performance at epoch 2 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 21, predict: 21, standard: 21.
+Loss is: 0.000000.
+2023-11-30 00:53:06 : WARNING  Train performance at epoch 3 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 52, predict: 52, standard: 52.
+Loss is: 0.000000.
+2023-11-30 00:53:15 : WARNING  Validate performance at epoch 3 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 14, predict: 14, standard: 14.
+Loss is: 0.000000.
+2023-11-30 00:53:24 : WARNING  test performance at epoch 3 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 21, predict: 21, standard: 21.
+Loss is: 0.000000.
+2023-11-30 00:54:22 : WARNING  dataset name: BuzzFeed_fake_news_content model name: Transformer
+model_parameters: {'d_inner': 128, 'd_k': 32, 'd_v': 32, 'n_head': 4, 'n_layers': 1, 'dropout': 0.1, 'use_star': True}
+batch size: 32
+num_epochs: 5
+loss type: SoftmaxCrossEntropy
+optimizer: Adam
+learning rate: 0.002
+
+2023-11-30 00:54:31 : WARNING  dataset name: BuzzFeed_fake_news_content model name: Transformer
+model_parameters: {'d_inner': 128, 'd_k': 32, 'd_v': 32, 'n_head': 4, 'n_layers': 1, 'dropout': 0.1, 'use_star': True}
+batch size: 32
+num_epochs: 5
+loss type: SoftmaxCrossEntropy
+optimizer: Adam
+learning rate: 0.002
+
+2023-11-30 00:54:40 : WARNING  Train performance at epoch 1 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 52, predict: 52, standard: 52.
+Loss is: 0.000000.
+2023-11-30 00:54:40 : WARNING  dataset name: BuzzFeed_fake_news_content model name: Transformer
+model_parameters: {'d_inner': 128, 'd_k': 32, 'd_v': 32, 'n_head': 4, 'n_layers': 1, 'dropout': 0.1, 'use_star': True}
+batch size: 32
+num_epochs: 5
+loss type: SoftmaxCrossEntropy
+optimizer: Adam
+learning rate: 0.002
+
+2023-11-30 00:54:49 : WARNING  Validate performance at epoch 1 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 14, predict: 14, standard: 14.
+Loss is: 0.000000.
+2023-11-30 00:54:49 : WARNING  dataset name: BuzzFeed_fake_news_content model name: Transformer
+model_parameters: {'d_inner': 128, 'd_k': 32, 'd_v': 32, 'n_head': 4, 'n_layers': 1, 'dropout': 0.1, 'use_star': True}
+batch size: 32
+num_epochs: 5
+loss type: SoftmaxCrossEntropy
+optimizer: Adam
+learning rate: 0.002
+
+2023-11-30 00:55:43 : WARNING  dataset name: BuzzFeed_fake_news_content model name: Transformer
+model_parameters: {'d_inner': 128, 'd_k': 32, 'd_v': 32, 'n_head': 4, 'n_layers': 1, 'dropout': 0.1, 'use_star': True}
+batch size: 32
+num_epochs: 5
+loss type: SoftmaxCrossEntropy
+optimizer: Adam
+learning rate: 0.002
+
+2023-11-30 00:55:43 : WARNING  Train performance at epoch 1 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 52, predict: 52, standard: 52.
+Loss is: 0.000000.
+2023-11-30 00:55:52 : WARNING  dataset name: BuzzFeed_fake_news_content model name: Transformer
+model_parameters: {'d_inner': 128, 'd_k': 32, 'd_v': 32, 'n_head': 4, 'n_layers': 1, 'dropout': 0.1, 'use_star': True}
+batch size: 32
+num_epochs: 5
+loss type: SoftmaxCrossEntropy
+optimizer: Adam
+learning rate: 0.002
+
+2023-11-30 00:55:52 : WARNING  Validate performance at epoch 1 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 14, predict: 14, standard: 14.
+Loss is: 0.000000.
+2023-11-30 00:56:01 : WARNING  dataset name: BuzzFeed_fake_news_content model name: Transformer
+model_parameters: {'d_inner': 128, 'd_k': 32, 'd_v': 32, 'n_head': 4, 'n_layers': 1, 'dropout': 0.1, 'use_star': True}
+batch size: 32
+num_epochs: 5
+loss type: SoftmaxCrossEntropy
+optimizer: Adam
+learning rate: 0.002
+
+2023-11-30 00:56:01 : WARNING  test performance at epoch 1 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 21, predict: 21, standard: 21.
+Loss is: 0.000000.
+2023-11-30 00:56:19 : WARNING  Train performance at epoch 2 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 52, predict: 52, standard: 52.
+Loss is: 0.000000.
+2023-11-30 00:56:28 : WARNING  Validate performance at epoch 2 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 14, predict: 14, standard: 14.
+Loss is: 0.000000.
+2023-11-30 00:56:37 : WARNING  test performance at epoch 2 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 21, predict: 21, standard: 21.
+Loss is: 0.000000.
+2023-11-30 00:56:55 : WARNING  Train performance at epoch 3 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 52, predict: 52, standard: 52.
+Loss is: 0.000000.
+2023-11-30 00:57:04 : WARNING  Validate performance at epoch 3 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 14, predict: 14, standard: 14.
+Loss is: 0.000000.
+2023-11-30 00:57:13 : WARNING  test performance at epoch 3 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 21, predict: 21, standard: 21.
+Loss is: 0.000000.
+2023-11-30 00:57:32 : WARNING  Train performance at epoch 4 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 52, predict: 52, standard: 52.
+Loss is: 0.000000.
+2023-11-30 00:57:41 : WARNING  Validate performance at epoch 4 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 14, predict: 14, standard: 14.
+Loss is: 0.000000.
+2023-11-30 00:57:50 : WARNING  test performance at epoch 4 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 21, predict: 21, standard: 21.
+Loss is: 0.000000.
+2023-11-30 00:58:23 : WARNING  dataset name: BuzzFeed_fake_news_content model name: Transformer
+model_parameters: {'d_inner': 128, 'd_k': 32, 'd_v': 32, 'n_head': 4, 'n_layers': 1, 'dropout': 0.1, 'use_star': True}
+batch size: 32
+num_epochs: 5
+loss type: SoftmaxCrossEntropy
+optimizer: Adam
+learning rate: 0.002
+
+2023-11-30 00:58:23 : WARNING  Train performance at epoch 1 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 52, predict: 52, standard: 52.
+Loss is: 0.000000.
+2023-11-30 00:58:32 : WARNING  Validate performance at epoch 1 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 14, predict: 14, standard: 14.
+Loss is: 0.000000.
+2023-11-30 00:58:41 : WARNING  test performance at epoch 1 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 21, predict: 21, standard: 21.
+Loss is: 0.000000.
+2023-11-30 00:58:59 : WARNING  Train performance at epoch 2 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 52, predict: 52, standard: 52.
+Loss is: 0.000000.
+2023-11-30 00:59:08 : WARNING  Validate performance at epoch 2 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 14, predict: 14, standard: 14.
+Loss is: 0.000000.
+2023-11-30 00:59:17 : WARNING  test performance at epoch 2 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 21, predict: 21, standard: 21.
+Loss is: 0.000000.
+2023-11-30 00:59:35 : WARNING  Train performance at epoch 3 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 52, predict: 52, standard: 52.
+Loss is: 0.000000.
+2023-11-30 00:59:44 : WARNING  Validate performance at epoch 3 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 14, predict: 14, standard: 14.
+Loss is: 0.000000.
+2023-11-30 00:59:53 : WARNING  test performance at epoch 3 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 21, predict: 21, standard: 21.
+Loss is: 0.000000.
+2023-11-30 01:00:12 : WARNING  Train performance at epoch 4 is precision: 1.000000, recall: 1.000000, fscore: 1.000000, macro-fscore: 1.000000, right: 52, predict: 52, standard: 52.
+Loss is: 0.000000.

@@ -111,7 +111,7 @@ class ClassificationTrainer(object):
         # Step 2: Access the 'Transformer' key
         model_parameters = data[model_name]
 
-        self.logger.warn(f'dataset name: {dataset_name} model name: {model_name}\n'
+        self.logger.warn(f'dataset name: {dataset_name}\nmodel name: {model_name}\n'
                          f'model_parameters: {model_parameters}\n'
                          f'batch size: {batch_size}\nnum_epochs: {num_epochs}\nloss type: {loss_type}\n'
                          f'optimizer: {optimizer}\nlearning rate: {learning_rate}\n'
@@ -120,14 +120,12 @@ class ClassificationTrainer(object):
     def train(self, data_loader, model, optimizer, stage, epoch):
         model.update_lr(optimizer, epoch)
         model.train()
-        self.log_parameters()
         return self.run(data_loader, model, optimizer, stage, epoch,
                         ModeType.TRAIN)
 
     def eval(self, data_loader, model, optimizer, stage, epoch):
         model.eval()
         return self.run(data_loader, model, optimizer, stage, epoch)
-
 
 
     def run(self, data_loader, model, optimizer, stage,
@@ -140,7 +138,6 @@ class ClassificationTrainer(object):
         standard_labels = []
         num_batch = data_loader.__len__()
         total_loss = 0.
-
 
         for batch in data_loader:
             # hierarchical classification using hierarchy penalty loss
@@ -198,6 +195,9 @@ class ClassificationTrainer(object):
                     is_flat=self.conf.eval.is_flat, is_multi=is_multi)
             # precision_list[0] save metrics of flat classification
             # precision_list[1:] save metrices of hierarchical classification
+            if epoch == 1 and stage == 'Train':
+                self.log_parameters()
+
             self.logger.warn(
                 "%s performance at epoch %d is precision: %f, "
                 "recall: %f, fscore: %f, macro-fscore: %f, right: %d, predict: %d, standard: %d.\n"
@@ -221,6 +221,7 @@ def load_checkpoint(file_name, conf, model, optimizer):
     return best_performance
 
 
+
 def save_checkpoint(state, file_prefix):
     file_name = file_prefix + "_" + str(state["epoch"])
     torch.save(state, file_name)
@@ -230,6 +231,7 @@ def train(conf):
     logger = util.Logger(conf)
     if not os.path.exists(conf.checkpoint_dir):
         os.makedirs(conf.checkpoint_dir)
+
 
     model_name = conf.model_name
     dataset_name = "ClassificationDataset"
