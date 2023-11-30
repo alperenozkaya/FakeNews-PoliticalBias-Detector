@@ -1,0 +1,29 @@
+{
+    "name": "Fake News Detector",
+    "description": "Fake news detector and word counter for selected text",
+    "version": "1.0",
+    "manifest_version": 2,
+    
+    "browser_action": {
+        "default_icon": {
+            "16": "extension/icons/icon16.png",
+            "48": "extension/icons/icon48.png",
+            "128": "extension/icons/icon128.png"
+        },
+        "default_popup": "extension/popup.html"
+    },
+    "icons": {
+        "16": "extension/icons/icon16.png",
+        "48": "extension/icons/icon48.png",
+        "128": "extension/icons/icon128.png"
+      },
+    
+    "permissions": [
+        "activeTab",
+        "contextMenus"
+    ],
+    "background": {
+        "scripts": ["extension/background.js"],
+        "persistent": false
+    }
+}
