@@ -23,6 +23,7 @@ then, you'll need to run tokenize_n_json.py and split_train_test_validate.py fil
 config file is located @ conf/train.json and this file is needed to be provided as a command line argument to the python terminal. here, you can configure training parameters such as model details, epochs, optimizers & loss funcitons etc.
 if all dependencies are correctly installed train.py should run smoothly.
 
+# IMPORTANT NOTICE: 
+The classification tool we use is the Tencent's NeuralNLP classifier model which is licensed under MIT license. For more information:
+https://github.com/Tencent/NeuralNLP-NeuralClassifier
 
-
-      
