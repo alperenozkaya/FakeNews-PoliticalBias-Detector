@@ -3,7 +3,7 @@
 # Fake:0 Real:1
 
 # all csv files to be combined
-datasets = [
+datasets= [
     'news_articles.csv',
     'WELFake_Dataset.csv',
     'True-clmentbisaillon.csv',
@@ -12,6 +12,12 @@ datasets = [
     'BuzzFeed_real_news_content.csv',
     'argilla.csv',
     'fakenewsenglish_combined.csv',
+    'test-erfan.csv',
+    'train-erfan.csv',
+    'validation-erfan.csv'
+]
+
+datasets_ = [
     'test-erfan.csv',
     'train-erfan.csv',
     'validation-erfan.csv'

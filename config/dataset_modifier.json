@@ -7,6 +7,6 @@
     "json_parser": {
         "input_dir": "formatted_datasets",
         "output_dir": "formatted_datasets_json",
-        "dataset_name": "BuzzFeed_fake_news_content.json"
+        "dataset_name": "WELFake_Dataset.json"
     }
 }
