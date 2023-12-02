@@ -7,12 +7,10 @@ JsonParser/formatted_datasets_json/*.json
 NLPClassifierTool/checkpoint_dir_rcv1/*
 NLPClassifierTool/data/*
 Dataset Modifier/.idea/*
-.idea/*
+.idea
 *.xml
 
-
-
-# Python specific
+# Python specific...
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
