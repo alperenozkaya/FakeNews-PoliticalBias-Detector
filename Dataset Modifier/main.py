@@ -4,9 +4,10 @@ import time
 import pandas as pd
 import json
 import dataset_sources
-import keyboard
 import os
 from config import Config
+
+import gdown
 
 
 # function to extract label from prediction specifically in argilla.csv
@@ -117,7 +118,7 @@ def format_datasets(datasets, dataset_fake_or_real, dataset_urls):
     return formatted_datasets
 
 
-import gdown
+
 
 
 def download_datasets_from_google_drive():

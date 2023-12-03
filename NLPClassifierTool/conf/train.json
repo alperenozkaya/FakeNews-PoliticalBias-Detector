@@ -11,13 +11,13 @@
     "model_dir": "trained_model_rcv1",
     "data": {
         "train_json_files": [
-            "data/WELFake_Dataset-data_train.json"
+            "data/fakenewsenglish_combined-data_train.json"
         ],
         "validate_json_files": [
-            "data/WELFake_Dataset-data_val.json"
+            "data/fakenewsenglish_combined-data_val.json"
         ],
         "test_json_files": [
-            "data/WELFake_Dataset-data_test.json"
+            "data/fakenewsenglish_combined-data_test.json"
         ],
         "generate_dict_using_json_files": true,
         "generate_dict_using_all_json_files": true,
@@ -50,7 +50,7 @@
     "train": {
         "batch_size": 32,
         "start_epoch": 1,
-        "num_epochs": 4,
+        "num_epochs": 2,
         "num_epochs_static_embedding": 0,
         "decay_steps": 1000,
         "decay_rate": 1.0,
@@ -110,7 +110,7 @@
         "batch_size": 1024,
         "is_flat": true,
         "top_k": 100,
-        "model_dir": "checkpoint_dir_transformer/Transformer_6"
+        "model_dir": "checkpoint_dir_transformer/Transformer_best"
     },
     "TextVDCNN": {
         "vdcnn_depth": 9,
@@ -170,5 +170,5 @@
         "logger_file": "log_test_rcv1_hierar",
         "log_level": "warn"
     },
-    "dataset_name": "WELFake_Dataset"
+    "dataset_name": "fakenewsenglish_combined"
 }

@@ -284,6 +284,7 @@ def train(conf):
 
 if __name__ == '__main__':
     config = Config(config_file=sys.argv[1])
+    os.environ['PYTORCH_CUDA_ALLOC_CONF'] = 'max_split_size_mb:128'  # to fix 'torch.cuda.OutOfMemoryError: CUDA'
     os.environ['CUDA_VISIBLE_DEVICES'] = str(config.train.visible_device_list)
     torch.manual_seed(2019)
     torch.cuda.manual_seed(2019)

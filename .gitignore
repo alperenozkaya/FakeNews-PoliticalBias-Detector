@@ -1,10 +1,9 @@
 Dataset Modifier/datasets/*.csv
-JsonParser/formatted_datasets/combined_dataset.csv
 Dataset Modifier/formatted_datasets/*.csv
-JsonParser/formatted_datasets/combined_dataset.csv
 JsonParser/formatted_datasets/*.csv
 JsonParser/formatted_datasets_json/*.json
 NLPClassifierTool/checkpoint_dir_rcv1/*
+NLPClassifierTool/checkpoint_dir_transformer/*
 NLPClassifierTool/data/*
 Dataset Modifier/.idea/
 *.xml
