@@ -1,0 +1,5 @@
+macro_average, precision: 0.500000, recall: 0.495614, fscore: 0.497797, 
+micro_average, precision: 0.991228, recall: 0.991228, fscore: 0.991228, right_count: 113, predict_count: 114, standard_count: 114
+
+real, precision: 0.000000, recall: 0.000000, fscore: 0.000000, right_count: 0, predict_count: 1, standard_count: 0
+fake, precision: 1.000000, recall: 0.991228, fscore: 0.995595, right_count: 113, predict_count: 113, standard_count: 114
