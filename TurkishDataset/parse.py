@@ -13,31 +13,53 @@ def tokenize_text(text):
     # Tokenizes the text using NLTK
     text = text.lower()
     text = text.translate(str.maketrans('', '', string.punctuation))
-    return nltk.word_tokenize(text, language='turkish') #yurtdaş, türkçe konuş!
+    return nltk.word_tokenize(text, language='turkish') #yurttaş, türkçe konuş!
 
-def load_and_shuffle_json(file_path):
-    # Load JSON objects from the file
-    with open(file_path, 'r', encoding='utf-8') as file:
-        data = [json.loads(line) for line in file]
+# Ensure you have the necessary package
+nltk.download('punkt')
 
-    # Shuffle the data
-    random.shuffle(data)
 
-    return data
+def process_file(filepath, doc_label):
+    # Process a single file and return its JSON representation
+    with open(filepath, 'r', encoding='utf-8') as file:
+        text = file.read()
+        tokens = tokenize_text(text)
 
-def save_json(data, file_path):
-    # Save the shuffled data back to a file
-    with open(file_path, 'w', encoding='utf-8') as file:
-        for item in data:
-            json.dump(item, file)
-            file.write('\n')
+        return {
+            'doc_label': [doc_label],
+            'doc_token': tokens,
+            'doc_keyword': [],  # Empty list for doc_keyword
+            'doc_topic': []     # Empty list for doc_topic
+        }
+
+def process_directory(directory):
+    # Process each file in the given directory
+    documents = []
+    doc_label = os.path.basename(directory)
+    for filename in os.listdir(directory):
+        if filename.endswith('.txt'):
+            filepath = os.path.join(directory, filename)
+            document = process_file(filepath, doc_label)
+            documents.append(document)
+    return documents
 
 def main():
-    input_path = 'dataset.json'  # Path to the original JSON file
-    output_path = 'shuffled_dataset.json'  # Path to save the shuffled data
+    base_directories = ['real', 'fake']
+    all_documents = []
 
-    shuffled_data = load_and_shuffle_json(input_path)
-    save_json(shuffled_data, output_path)
+    # Process each directory and store the documents
+    for directory in base_directories:
+        documents = process_directory(directory)
+        all_documents.extend(documents)
+
+    # Shuffle the documents
+    random.shuffle(all_documents)
+
+    # Write the shuffled documents to a JSON file
+    with open('shuffled_dataset.json', 'w', encoding='utf-8') as output_file:
+        for document in all_documents:
+            json.dump(document, output_file)
+            output_file.write('\n')
 
 if __name__ == "__main__":
     main()

@@ -33,3 +33,38 @@ Loss is: 0.178364.
 Loss is: 0.181075.
 2023-11-30 01:09:16 : WARNING  Best test performance at epoch 4 is precision: 0.930421, recall: 0.930421, fscore: 0.930421, macro-fscore: 0.929628, right: 14589, predict: 15680, standard: 15680.
 Loss is: 0.181075.
+2023-12-03 20:28:21 : WARNING  dataset name: shuffled_dataset
+model name: Transformer
+model_parameters: {'d_inner': 128, 'd_k': 32, 'd_v': 32, 'n_head': 4, 'n_layers': 1, 'dropout': 0.1, 'use_star': True}
+batch size: 32
+num_epochs: 4
+loss type: SoftmaxCrossEntropy
+optimizer: Adam
+learning rate: 0.002
+
+2023-12-03 20:28:21 : WARNING  Train performance at epoch 1 is precision: 0.788411, recall: 0.788411, fscore: 0.788411, macro-fscore: 0.793010, right: 2109, predict: 2675, standard: 2675.
+Loss is: 0.475274.
+2023-12-03 20:28:27 : WARNING  Validate performance at epoch 1 is precision: 0.772795, recall: 0.772795, fscore: 0.772795, macro-fscore: 0.775849, right: 517, predict: 669, standard: 669.
+Loss is: 0.514106.
+2023-12-03 20:28:34 : WARNING  test performance at epoch 1 is precision: 0.782063, recall: 0.782063, fscore: 0.782063, macro-fscore: 0.782724, right: 872, predict: 1115, standard: 1115.
+Loss is: 0.545665.
+2023-12-03 20:28:47 : WARNING  Train performance at epoch 2 is precision: 0.964112, recall: 0.964112, fscore: 0.964112, macro-fscore: 0.964654, right: 2579, predict: 2675, standard: 2675.
+Loss is: 0.113013.
+2023-12-03 20:28:54 : WARNING  Validate performance at epoch 2 is precision: 0.896861, recall: 0.896861, fscore: 0.896861, macro-fscore: 0.901309, right: 600, predict: 669, standard: 669.
+Loss is: 0.244308.
+2023-12-03 20:29:00 : WARNING  test performance at epoch 2 is precision: 0.918386, recall: 0.918386, fscore: 0.918386, macro-fscore: 0.920122, right: 1024, predict: 1115, standard: 1115.
+Loss is: 0.207858.
+2023-12-03 20:29:14 : WARNING  Train performance at epoch 3 is precision: 0.998131, recall: 0.998131, fscore: 0.998131, macro-fscore: 0.998129, right: 2670, predict: 2675, standard: 2675.
+Loss is: 0.016997.
+2023-12-03 20:29:20 : WARNING  Validate performance at epoch 3 is precision: 0.956652, recall: 0.956652, fscore: 0.956652, macro-fscore: 0.957953, right: 640, predict: 669, standard: 669.
+Loss is: 0.127479.
+2023-12-03 20:29:27 : WARNING  test performance at epoch 3 is precision: 0.961435, recall: 0.961435, fscore: 0.961435, macro-fscore: 0.962098, right: 1072, predict: 1115, standard: 1115.
+Loss is: 0.095394.
+2023-12-03 20:29:40 : WARNING  Train performance at epoch 4 is precision: 0.999252, recall: 0.999252, fscore: 0.999252, macro-fscore: 0.999252, right: 2673, predict: 2675, standard: 2675.
+Loss is: 0.005672.
+2023-12-03 20:29:46 : WARNING  Validate performance at epoch 4 is precision: 0.953662, recall: 0.953662, fscore: 0.953662, macro-fscore: 0.954957, right: 638, predict: 669, standard: 669.
+Loss is: 0.153341.
+2023-12-03 20:29:53 : WARNING  test performance at epoch 4 is precision: 0.962332, recall: 0.962332, fscore: 0.962332, macro-fscore: 0.962953, right: 1073, predict: 1115, standard: 1115.
+Loss is: 0.102654.
+2023-12-03 20:30:00 : WARNING  Best test performance at epoch 3 is precision: 0.961435, recall: 0.961435, fscore: 0.961435, macro-fscore: 0.962098, right: 1072, predict: 1115, standard: 1115.
+Loss is: 0.095394.

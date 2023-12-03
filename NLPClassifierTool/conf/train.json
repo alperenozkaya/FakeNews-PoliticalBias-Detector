@@ -11,13 +11,13 @@
     "model_dir": "trained_model_rcv1",
     "data": {
         "train_json_files": [
-            "data/WELFake_Dataset-data_train.json"
+            "data/shuffled_dataset-data_train.json"
         ],
         "validate_json_files": [
-            "data/WELFake_Dataset-data_val.json"
+            "data/shuffled_dataset-data_val.json"
         ],
         "test_json_files": [
-            "data/WELFake_Dataset-data_test.json"
+            "data/shuffled_dataset-data_test.json"
         ],
         "generate_dict_using_json_files": true,
         "generate_dict_using_all_json_files": true,
@@ -170,5 +170,5 @@
         "logger_file": "log_test_rcv1_hierar",
         "log_level": "warn"
     },
-    "dataset_name": "WELFake_Dataset"
+    "dataset_name": "shuffled_dataset"
 }
