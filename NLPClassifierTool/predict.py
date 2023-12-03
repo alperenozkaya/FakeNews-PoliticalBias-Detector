@@ -81,6 +81,7 @@ class Predictor(object):
             probs = probs.cpu().tolist()
             return np.array(probs)
 
+
 if __name__ == "__main__":
     config = Config(config_file=sys.argv[1])
     predictor = Predictor(config)
@@ -98,6 +99,7 @@ if __name__ == "__main__":
             predict_probs.append(j)
     with codecs.open("predict.txt", "w", predictor.dataset.CHARSET) as of:
         for predict_prob in predict_probs:
+            print(predict_prob)
             if not is_multi:
                 predict_label_ids = [predict_prob.argmax()]
             else:
@@ -108,4 +110,4 @@ if __name__ == "__main__":
                         predict_label_ids.append(predict_label_idx[j])
             predict_label_name = [predictor.dataset.id_to_label_map[predict_label_id] \
                     for predict_label_id in predict_label_ids]
-            of.write(";".join(predict_label_name) + "\n") 
+            of.write(";".join(predict_label_name) + "\n")

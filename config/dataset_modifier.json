@@ -1,12 +1,12 @@
 {
     "dataset_modifier": {
-        "download_from_gdrive": false,
+        "download_from_gdrive": true,
         "combine_datasets": false,
         "formatted_csv_save_dir": "../JsonParser/formatted_datasets"
     },
     "json_parser": {
         "input_dir": "formatted_datasets",
         "output_dir": "formatted_datasets_json",
-        "dataset_name": "WELFake_Dataset.json"
+        "dataset_name": "fakenewsenglish_combined.json"
     }
 }
