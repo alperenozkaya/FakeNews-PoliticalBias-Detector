@@ -4,6 +4,7 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import string
+import random
 
 # Ensure you have the necessary package
 nltk.download('punkt')
@@ -13,9 +14,6 @@ def tokenize_text(text):
     text = text.lower()
     text = text.translate(str.maketrans('', '', string.punctuation))
     return nltk.word_tokenize(text, language='turkish') #yurtdaş, türkçe konuş!
-
-import json
-import random
 
 def load_and_shuffle_json(file_path):
     # Load JSON objects from the file
