@@ -15,6 +15,7 @@ the License.
 import numpy as np
 import torch
 import torch.nn as nn
+import pickle
 
 from model.model_util import ActivationType
 from model.model_util import FAN_MODE
@@ -103,21 +104,27 @@ class Embedding(torch.nn.Module):
             pretrained_embedding_file):
         self.logger.warn(
             "Load %s embedding from %s" % (name, pretrained_embedding_file))
-        with open(pretrained_embedding_file) as fin:
-            num_pretrained = 0
-            for line in fin:
-                data = line.strip().split(' ')
-                # Check embedding info
-                if len(data) == 2:
-                    assert int(data[1]) == embedding_dim, \
-                        "Pretrained embedding dim not matching: %s, %d" % (
-                            data[1], embedding_dim)
-                    continue
-                if data[0] not in dict_map:
-                    continue
-                embedding = torch.FloatTensor([float(i) for i in data[1:]])
-                embedding_lookup_table[dict_map[data[0]]] = embedding
-                num_pretrained += 1
+
+        # Load the entire embeddings object from Pickle file
+        with open(pretrained_embedding_file, 'rb') as fin:
+            pretrained_embeddings = pickle.load(fin)
+
+        num_pretrained = 0
+
+        # Iterate through the loaded embeddings
+        for word, embedding in pretrained_embeddings.items():
+            if word not in dict_map:
+                continue
+            # Ensure that the embedding dimension matches
+            assert len(embedding) == embedding_dim, \
+                "Pretrained embedding dim not matching: %s, %d" % (
+                    len(embedding), embedding_dim)
+
+            # Convert to torch tensor and assign to the lookup table
+            embedding_tensor = torch.FloatTensor(embedding)
+            embedding_lookup_table[dict_map[word]] = embedding_tensor
+            num_pretrained += 1
+
         self.logger.warn(
             "Total dict size of %s is %d" % (name, len(dict_map)))
         self.logger.warn("Size of pretrained %s embedding is %d" % (

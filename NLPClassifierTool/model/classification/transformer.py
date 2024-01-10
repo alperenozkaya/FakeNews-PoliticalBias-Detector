@@ -11,7 +11,7 @@ is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND
 or implied. See the License for thespecific language governing permissions and limitations under
 the License.
 """
-
+import numpy as np
 import torch
 import torch.nn as nn
 
