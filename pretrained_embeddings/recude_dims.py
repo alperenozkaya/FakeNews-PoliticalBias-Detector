@@ -17,3 +17,10 @@ reduced_embeddings_dict = {word: vec for word, vec in zip(embeddings_dict.keys()
 with open('../NLPClassifierTool/reduced_embeddings_dict.pkl', 'wb') as file:
     pickle.dump(reduced_embeddings_dict, file)
 
+
+"""
+nltk tokenized data (stopwords not removed) => bert => %95.8 acc
+nltk tokenized data (stopwords removed) => bert => ???
+bert tokenized data => bert => ???
+
+"""
