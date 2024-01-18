@@ -169,4 +169,5 @@ def main():
 
 if __name__ == '__main__':
     config = Config(config_file='../config/dataset_modifier.json')
+    print('colab is working!')
     main()
