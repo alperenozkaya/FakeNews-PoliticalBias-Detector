@@ -127,7 +127,6 @@ class ClassificationTrainer(object):
         model.eval()
         return self.run(data_loader, model, optimizer, stage, epoch)
 
-
     def run(self, data_loader, model, optimizer, stage,
             epoch, mode=ModeType.EVAL):
         is_multi = False
@@ -221,7 +220,6 @@ def load_checkpoint(file_name, conf, model, optimizer):
     return best_performance
 
 
-
 def save_checkpoint(state, file_prefix):
     file_name = file_prefix + "_" + str(state["epoch"])
     torch.save(state, file_name)
@@ -231,7 +229,6 @@ def train(conf):
     logger = util.Logger(conf)
     if not os.path.exists(conf.checkpoint_dir):
         os.makedirs(conf.checkpoint_dir)
-
 
     model_name = conf.model_name
     dataset_name = "ClassificationDataset"
@@ -284,7 +281,7 @@ def train(conf):
 
 if __name__ == '__main__':
     config = Config(config_file=sys.argv[1])
-    # os.environ['PYTORCH_CUDA_ALLOC_CONF'] = 'max_split_size_mb:128'  # to fix 'torch.cuda.OutOfMemoryError: CUDA'
+    os.environ['PYTORCH_CUDA_ALLOC_CONF'] = 'max_split_size_mb:4096'  # to fix 'torch.cuda.OutOfMemoryError: CUDA'
     os.environ['CUDA_VISIBLE_DEVICES'] = str(config.train.visible_device_list)
     torch.manual_seed(2019)
     torch.cuda.manual_seed(2019)

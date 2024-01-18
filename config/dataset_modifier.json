@@ -1,13 +1,13 @@
 {
     "dataset_modifier": {
         "download_from_gdrive": true,
-        "combine_datasets": false,
+        "combine_datasets": true,
         "formatted_csv_save_dir": "../JsonParser/formatted_datasets"
     },
     "json_parser": {
         "input_dir": "formatted_datasets",
         "output_dir": "formatted_datasets_json",
-        "dataset_name": "fakenewsenglish_combined.json"
+        "dataset_name": "combined_dataset_no_stop_words_reduced_10percent.json"
 
     }
 }

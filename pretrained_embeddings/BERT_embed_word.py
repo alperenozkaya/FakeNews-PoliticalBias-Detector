@@ -42,7 +42,8 @@ print("device: ", device)
 # Load the tokenizer and model
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 model = BertModel.from_pretrained('bert-base-uncased')
-text_path = '../Kashgari/combined_dataset-data_train.json'
+#text_path = '../Kashgari/combined_dataset-data_train.json'
+text_path = '../JsonParser/formatted_datasets_json/combined_dataset_no_stop_words_reduced_10percent.json'
 model.to(device)
 
 # Load the data

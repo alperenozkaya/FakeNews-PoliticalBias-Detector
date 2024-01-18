@@ -122,7 +122,7 @@ def format_datasets(datasets, dataset_fake_or_real, dataset_urls):
 
 
 def download_datasets_from_google_drive():
-    datasets_drive_url = 'https://drive.google.com/drive/folders/1gYQ7PU6LfilfOIPoUVk0k7W4RTLxKNUY?usp=drive_link'
+    datasets_drive_url = 'https://drive.google.com/drive/folders/1ZsHH4J7MaShACaPUOg6O1tlbbVziatS8?usp=drive_link'
     if datasets_drive_url.split('/')[-1] == '?usp=drive_link':
         datasets_drive_url = datasets_drive_url.replace('?usp=drive_link', '')
 
