@@ -3,6 +3,9 @@ import pandas as pd
 import nltk
 import json
 from config import Config
+from transformers import BertTokenizer
+
+tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 
 # Ensure NLTK tokenizers are downloaded
 nltk.download('punkt')
@@ -13,6 +16,10 @@ def tokenize(text):
     tokens = nltk.word_tokenize(text)
     return [token.lower() for token in tokens if token.isalpha()]
 
+
+def bert_tokenize(text):
+    tokens = tokenizer.tokenize(text)
+    return tokens
 
 def process_file(file_path, output_dir):
     df = pd.read_csv(file_path)
@@ -26,7 +33,7 @@ def process_file(file_path, output_dir):
         for _, row in df.iterrows():
             # Assuming 'Label' field contains a single label per row (1 or 0)
             doc_label = [row['Label']]
-            doc_token = tokenize(row['Text'])
+            doc_token = bert_tokenize(row['Text'])
 
             # Create a dictionary for each row and write it as a JSON string
             json.dump({
