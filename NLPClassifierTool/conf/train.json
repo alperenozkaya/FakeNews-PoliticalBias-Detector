@@ -11,13 +11,13 @@
     "model_dir": "trained_model_rcv1",
     "data": {
         "train_json_files": [
-            "data/combined_dataset-data_train.json"
+            "data/combined_dataset_no_stop_words_reduced_10percent-data_train.json"
         ],
         "validate_json_files": [
-            "data/combined_dataset-data_val.json"
+            "data/combined_dataset_no_stop_words_reduced_10percent-data_val.json"
         ],
         "test_json_files": [
-            "data/combined_dataset-data_test.json"
+            "data/combined_dataset_no_stop_words_reduced_10percent-data_test.json"
         ],
         "generate_dict_using_json_files": true,
         "generate_dict_using_all_json_files": true,
@@ -170,6 +170,5 @@
         "logger_file": "log_test_rcv1_hierar",
         "log_level": "warn"
     },
-    "dataset_name": "shuffled_dataset"
-
+    "dataset_name": "combined_dataset_no_stop_words_reduced_10percent"
 }

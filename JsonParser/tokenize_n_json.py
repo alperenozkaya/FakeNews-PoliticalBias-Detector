@@ -2,6 +2,9 @@ import os
 import pandas as pd
 import nltk
 import json
+
+from nltk.corpus import stopwords
+
 from config import Config
 from transformers import BertTokenizer
 
@@ -9,12 +12,14 @@ tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 
 # Ensure NLTK tokenizers are downloaded
 nltk.download('punkt')
+nltk.download('stopwords')
 
 
 # Function to tokenize text, convert to lowercase, and filter out non-alphabetic characters
 def tokenize(text):
     tokens = nltk.word_tokenize(text)
-    return [token.lower() for token in tokens if token.isalpha()]
+    stop_words = set(stopwords.words('english'))
+    return [token.lower() for token in tokens if token.isalpha() and token.lower() not in stop_words]
 
 
 def bert_tokenize(text):
