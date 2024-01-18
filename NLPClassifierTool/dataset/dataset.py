@@ -14,8 +14,9 @@ the License.
 
 import json
 import os
-
+import sys
 import torch
+import pickle
 
 from util import Logger
 from util import ModeType
@@ -47,7 +48,6 @@ class DatasetBase(torch.utils.data.dataset.Dataset):
     """
     CLASSIFICATION_LABEL_SEPARATOR = "--"
     CHARSET = "utf-8"
-
     VOCAB_PADDING = 0  # Embedding is all zero and not learnable
     VOCAB_UNKNOWN = 1
     VOCAB_PADDING_LEARNABLE = 2  # Embedding is random initialized and learnable
@@ -84,7 +84,7 @@ class DatasetBase(torch.utils.data.dataset.Dataset):
 
         def _insert_vocab(files, _mode=InsertVocabMode.ALL):
             for _i, _json_file in enumerate(files):
-                with open(_json_file) as _fin:
+                with open(_json_file, mode='rb') as _fin:
                     for _json_str in _fin:
                         try:
                             self._insert_vocab(json.loads(_json_str), mode)
@@ -152,7 +152,7 @@ class DatasetBase(torch.utils.data.dataset.Dataset):
                 self._save_dict(name)
         else:
             dict_idx = self.dict_names.index(dict_name)
-            dict_file = open(self.dict_files[dict_idx], "w")
+            dict_file = open(self.dict_files[dict_idx], "w", encoding="utf-8")
             id_to_vocab_dict_map = self.id_to_vocab_dict_list[dict_idx]
             index = 0
             for vocab, count in self.count_list[dict_idx]:
@@ -187,7 +187,7 @@ class DatasetBase(torch.utils.data.dataset.Dataset):
                     id_to_vocab_dict_map[1] = self.VOCAB_UNKNOWN
                     id_to_vocab_dict_map[2] = self.VOCAB_PADDING_LEARNABLE
                 
-                    for line in open(self.dict_files[dict_idx], "r"):
+                    for line in open(self.dict_files[dict_idx], "r", encoding="utf-8"):
                         vocab = line.strip("\n").split("\t")
                         dict_idx = len(dict_map)
                         dict_map[vocab[0]] = dict_idx
@@ -225,6 +225,17 @@ class DatasetBase(torch.utils.data.dataset.Dataset):
                 return
             index = self.dict_names.index(dict_name)
             dict_map = self.dicts[index]
+
+            with open (pretrained_file, 'rb') as fin:
+                data = pickle.load(fin)
+
+            for datum in data:
+                if datum not in dict_map:
+                    dict_map[datum] = 0
+                dict_map[datum] += min_count + 1
+
+            test = 'string'
+            """
             with open(pretrained_file) as fin:
                 for line in fin:
                     data = line.strip().split(' ')
@@ -232,7 +243,7 @@ class DatasetBase(torch.utils.data.dataset.Dataset):
                         continue
                     if data[0] not in dict_map:
                         dict_map[data[0]] = 0
-                    dict_map[data[0]] += min_count + 1
+                    dict_map[data[0]] += min_count + 1"""
 
     def _insert_vocab(self, json_obj, mode=InsertVocabMode.ALL):
         """Insert vocab to dict

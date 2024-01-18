@@ -41,7 +41,7 @@ from model.classification.region_embedding import RegionEmbedding
 from model.loss import ClassificationLoss
 from model.model_util import get_optimizer, get_hierar_relations
 from util import ModeType
-
+import matplotlib as plt
 
 ClassificationDataset, ClassificationCollator, FastTextCollator, ClassificationLoss, cEvaluator
 FastText, TextCNN, TextRNN, TextRCNN, DRNN, TextVDCNN, Transformer, DPCNN, AttentiveConvNet, RegionEmbedding
@@ -198,6 +198,9 @@ class ClassificationTrainer(object):
             if epoch == 1 and stage == 'Train':
                 self.log_parameters()
 
+
+
+            #TODO: get confusion matrix data.
             self.logger.warn(
                 "%s performance at epoch %d is precision: %f, "
                 "recall: %f, fscore: %f, macro-fscore: %f, right: %d, predict: %d, standard: %d.\n"
@@ -281,6 +284,11 @@ def train(conf):
                     optimizer)
     trainer.eval(test_data_loader, model, optimizer, "Best test", best_epoch)
 
+    # plot confusion matrix on the best model
+
+
+def plot_conf_matrix():
+    pass
 
 if __name__ == '__main__':
     config = Config(config_file=sys.argv[1])

@@ -5,25 +5,28 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import string
 import random
+from transformers import AutoTokenizer, AutoModel
 
 # Ensure you have the necessary package
 nltk.download('punkt')
+tokenizer = AutoTokenizer.from_pretrained('dbmdz/convbert-base-turkish-mc4-uncased')
 
-def tokenize_text(text):
+def nltk_tokenize_text(text):
     # Tokenizes the text using NLTK
     text = text.lower()
     text = text.translate(str.maketrans('', '', string.punctuation))
     return nltk.word_tokenize(text, language='turkish') #yurttaş, türkçe konuş!
 
-# Ensure you have the necessary package
-nltk.download('punkt')
-
+def bert_tokenize_text(text):
+    text = text.lower()
+    text = text.translate(str.maketrans('', '', string.punctuation))
+    return tokenizer.tokenize(text)
 
 def process_file(filepath, doc_label):
     # Process a single file and return its JSON representation
     with open(filepath, 'r', encoding='utf-8') as file:
         text = file.read()
-        tokens = tokenize_text(text)
+        tokens = bert_tokenize_text(text)
 
         return {
             'doc_label': [doc_label],
@@ -56,7 +59,7 @@ def main():
     random.shuffle(all_documents)
 
     # Write the shuffled documents to a JSON file
-    with open('shuffled_dataset.json', 'w', encoding='utf-8') as output_file:
+    with open('shuffled_dataset_bert.json', 'w', encoding='utf-8') as output_file:
         for document in all_documents:
             json.dump(document, output_file)
             output_file.write('\n')

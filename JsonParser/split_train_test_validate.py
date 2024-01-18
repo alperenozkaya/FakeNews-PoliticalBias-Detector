@@ -30,7 +30,7 @@ def sanitize_text(text):
 # Function to rename labels and sanitize text
 def preprocess_data(data):
     for entry in data:
-        entry['doc_token'] = [sanitize_text(token) for token in entry['doc_token']]
+        #entry['doc_token'] = [sanitize_text(token) for token in entry['doc_token']]
         if entry['doc_label'] == [0]:
             entry['doc_label'] = ['fake']
         elif entry['doc_label'] == [1]:

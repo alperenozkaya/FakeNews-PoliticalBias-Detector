@@ -6,7 +6,7 @@ from tqdm import tqdm
 import numpy as np
 from torch.utils.data import Dataset, DataLoader
 import gc
-
+from transformers import AutoTokenizer, AutoModel
 
 class TokenizedTextDataset(Dataset):
     def __init__(self, tokenized_texts, tokenizer_dl, max_len=512):
@@ -40,9 +40,10 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print("device: ", device)
 
 # Load the tokenizer and model
-tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-model = BertModel.from_pretrained('bert-base-uncased')
-text_path = '../JsonParser/formatted_datasets_json/bert_combined.json'
+tokenizer = AutoTokenizer.from_pretrained("dbmdz/convbert-base-turkish-mc4-uncased")
+model = AutoModel.from_pretrained("dbmdz/convbert-base-turkish-mc4-uncased")
+
+text_path = '../TurkishDataset/shuffled_dataset_bert.json'
 model.to(device)
 
 # Load the data
@@ -107,5 +108,5 @@ for token in embeddings_sum_dict:
 
 
 # Save the dictionary using pickle
-with open('../NLPClassifierTool/embeddings_dict_nltk.pkl', 'wb') as file:
+with open('../NLPClassifierTool/embeddings_dict_bert_tr_mc4.pkl', 'wb') as file:
     pickle.dump(embeddings_sum_dict, file)
