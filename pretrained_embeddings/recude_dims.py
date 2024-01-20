@@ -2,7 +2,7 @@ import pickle
 from sklearn.decomposition import PCA
 
 # Load the original embeddings
-with open('../NLPClassifierTool/embeddings_dict.pkl', 'rb') as file:
+with open('../NLPClassifierTool/embeddings_dict_bert_tr_mc4.pkl', 'rb') as file:
     embeddings_dict = pickle.load(file)
 
 # Convert embeddings to a list for PCA

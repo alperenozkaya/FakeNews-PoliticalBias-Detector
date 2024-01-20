@@ -1,6 +1,7 @@
 # Model-Extension Integration
 
 import fakenews_prediction
+import fakenews_prediction_tr
 from flask import Flask, request
 from flask_cors import CORS
 

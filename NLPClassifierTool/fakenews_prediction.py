@@ -21,7 +21,7 @@ def tokenize(text):
     return [token.lower() for token in tokens if token.isalpha()]
 
 
-def tokenize_text_to_json_file(text, output_dir, file_name="predict.json"):
+def tokenize_text_to_json_file(text, output_dir, file_name="rcv1_test.json"):
     # Create output directory if it doesn't exist
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
@@ -48,7 +48,7 @@ def tokenize_text_to_json_file(text, output_dir, file_name="predict.json"):
 def predict_label(text):
 
     output_directory = "output"
-    json_file_name = "predict.json"
+    json_file_name = "rcv1_test.json"
     tokenize_text_to_json_file(text, output_directory, json_file_name)
     json_file_path = os.path.join(output_directory, json_file_name)
     config = Config(config_file='../NLPClassifierTool/conf/train.json')
@@ -79,3 +79,7 @@ def predict_label(text):
     return predict_label_name, predict_label_prob
 
 
+text = "you me you he she it!"
+label, probability = predict_label(text)
+print(f"Predicted Label: {label}")
+print(f"Probability: {probability}")

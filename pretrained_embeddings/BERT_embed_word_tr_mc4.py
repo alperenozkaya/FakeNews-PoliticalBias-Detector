@@ -49,7 +49,7 @@ model = AutoModel.from_pretrained("dbmdz/convbert-base-turkish-mc4-uncased")
 tokenizer = AutoTokenizer.from_pretrained("dbmdz/electra-base-turkish-mc4-uncased-discriminator")
 model = AutoModel.from_pretrained("dbmdz/electra-base-turkish-mc4-uncased-discriminator")
 
-text_path = '../TurkishDataset/shuffled_dataset_bert.json'
+text_path = '../JsonParser/formatted_datasets_json/shuffled_dataset_bert.json'
 model.to(device)
 
 # Load the data

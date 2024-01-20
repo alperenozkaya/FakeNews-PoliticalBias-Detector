@@ -9,7 +9,9 @@ from transformers import AutoTokenizer, AutoModel
 
 # Ensure you have the necessary package
 nltk.download('punkt')
-tokenizer = AutoTokenizer.from_pretrained('dbmdz/convbert-base-turkish-mc4-uncased')
+# tokenizer = AutoTokenizer.from_pretrained('dbmdz/convbert-base-turkish-mc4-uncased')
+tokenizer = AutoTokenizer.from_pretrained('dbmdz/electra-base-turkish-mc4-uncased-discriminator')
+
 
 def nltk_tokenize_text(text):
     # Tokenizes the text using NLTK
@@ -59,7 +61,7 @@ def main():
     random.shuffle(all_documents)
 
     # Write the shuffled documents to a JSON file
-    with open('shuffled_dataset_bert.json', 'w', encoding='utf-8') as output_file:
+    with open('../JsonParser/formatted_datasets_json/shuffled_dataset_bert.json', 'w', encoding='utf-8') as output_file:
         for document in all_documents:
             json.dump(document, output_file)
             output_file.write('\n')
