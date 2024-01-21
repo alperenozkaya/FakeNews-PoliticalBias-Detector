@@ -14,3 +14,6 @@ TurkishDataset/*.json
 NLPClassifierTool/__pycache__/predict.cpython-310.pyc
 NLPClassifierTool/__pycache__/fakenews_prediction.cpython-310.pyc
 NLPClassifierTool/__pycache__/config.cpython-310.pyc
+*.pkl
+*.pkl
+*.pt
