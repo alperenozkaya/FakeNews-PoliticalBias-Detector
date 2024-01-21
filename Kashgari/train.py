@@ -88,9 +88,9 @@ def train_model(model, train_loader, val_loader, criterion, optimizer, epochs, d
 
 
 # Load datasets from the respective JSON files
-train_data = load_data('shuffled_dataset_bert-data_train.json')
-val_data = load_data('shuffled_dataset_bert-data_val.json')
-test_data = load_data('shuffled_dataset_bert-data_test.json')
+train_data = load_data('combined_dataset-data_train.json')
+val_data = load_data('combined_dataset-data_val.json')
+test_data = load_data('combined_dataset-data_test.json')
 
 # Build vocabulary from the training data
 vocab = build_vocab(train_data)
@@ -106,7 +106,7 @@ model = FakeNewsClassifier(vocab_size, embedding_dim=100, hidden_dim=128, output
 
 # Define loss and optimizer
 criterion = nn.BCELoss()
-optimizer = optim.Adam(model.parameters(), lr=0.002)
+optimizer = optim.Adam(model.parameters(), lr=0.001)
 
 # Train the model
 epochs = 4  # Keeping the same number of epochs

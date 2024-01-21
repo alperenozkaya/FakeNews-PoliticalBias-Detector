@@ -7,17 +7,17 @@
     },
     "device": "cuda",
     "model_name": "Transformer",
-    "checkpoint_dir": "checkpoint_dir_transformer_NLTK",
+    "checkpoint_dir": "checkpoint_dir_transformer_3_layer_sigmoid_BERT",
     "model_dir": "trained_model_rcv1",
     "data": {
         "train_json_files": [
-            "data/bert_combined_4layer-data_train.json"
+            "data/shuffled_dataset_bert-data_train.json"
         ],
         "validate_json_files": [
-            "data/bert_combined_4layer-data_val.json"
+            "data/shuffled_dataset_bert-data_val.json"
         ],
         "test_json_files": [
-            "data/bert_combined_4layer-data_test.json"
+            "data/shuffled_dataset_bert-data_test.json"
         ],
         "generate_dict_using_json_files": true,
         "generate_dict_using_all_json_files": true,
@@ -140,7 +140,7 @@
         "d_k": 32,
         "d_v": 32,
         "n_head": 4,
-        "n_layers": 2,
+        "n_layers": 4,
         "dropout": 0.1,
         "use_star": true
     },
@@ -170,5 +170,5 @@
         "logger_file": "log_test_rcv1_hierar",
         "log_level": "warn"
     },
-    "dataset_name": "bert_combined_4layer"
+    "dataset_name": "shuffled_dataset_bert"
 }

@@ -18,10 +18,8 @@ def tokenize(text):
 
 
 def bert_tokenize(text):
-    text = text.lower()
     tokens = tokenizer.tokenize(text)
     return tokens
-
 
 def process_file(file_path, output_dir):
     df = pd.read_csv(file_path)

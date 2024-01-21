@@ -7,7 +7,7 @@
     "json_parser": {
         "input_dir": "formatted_datasets",
         "output_dir": "formatted_datasets_json",
-        "dataset_name": "bert_combined_4layer.json"
+        "dataset_name": "shuffled_dataset_bert.json"
 
     }
 }
