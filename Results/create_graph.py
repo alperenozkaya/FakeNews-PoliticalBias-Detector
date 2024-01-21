@@ -50,8 +50,8 @@ def plot_all_models_test_precision(dataframe):
 
     models = dataframe['Model'].unique()
     colors = plt.cm.viridis(np.linspace(0, 1, len(models)))  # Color map for distinct colors
-
-    for model, color in zip(models, colors):
+    marker_types = ['o', 'x', '*']
+    for model, color, marker_type in zip(models, colors, marker_types):
         # Extract the relevant columns for the model
         model_data = dataframe[dataframe['Model'] == model]
         test_precision_cols = [col for col in model_data if col.startswith('Test Precision')]
@@ -61,7 +61,7 @@ def plot_all_models_test_precision(dataframe):
         precision_values = [model_data.iloc[0][col] for col in test_precision_cols]
 
         # Plotting
-        plt.plot(epochs, precision_values, marker='o', color=color, label=model)
+        plt.plot(epochs, precision_values, marker=marker_type, color=color, label=model)
 
     plt.title('Test Precision per Epoch for All Embeddings')
     plt.xlabel('Epoch')
