@@ -107,5 +107,5 @@ for token in embeddings_sum_dict:
 
 
 # Save the dictionary using pickle
-with open('../NLPClassifierTool/embeddings_dict_nltk.pkl', 'wb') as file:
+with open('../NLPClassifierTool/embeddings_dict_nltk-bert.pkl', 'wb') as file:
     pickle.dump(embeddings_sum_dict, file)

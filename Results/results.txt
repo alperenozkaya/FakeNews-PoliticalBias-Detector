@@ -1,5 +1,4 @@
 TR-Electra-4 epoch
-
 dataset name: shuffled_dataset_bert
 model name: Transformer
 model_parameters: {'d_inner': 128, 'd_k': 32, 'd_v': 32, 'n_head': 4, 'n_layers': 2, 'dropout': 0.1, 'use_star': True}
@@ -42,7 +41,6 @@ Loss is: 0.028130.
 
 
 TR-Electra-10 epoch
-
 dataset name: shuffled_dataset_bert
 model name: Transformer
 model_parameters: {'d_inner': 128, 'd_k': 32, 'd_v': 32, 'n_head': 4, 'n_layers': 2, 'dropout': 0.1, 'use_star': True}
@@ -124,3 +122,86 @@ Loss is: 0.017316.
 Epoch 10 cost time: 24 second
 Best test performance at epoch 9 is precision: 0.964126, recall: 0.964126, fscore: 0.964126, macro-fscore: 0.964084, right: 1075, predict: 1115, standard: 1115.
 Loss is: 0.016968.
+
+BERT-Electra-Fast
+dataset name: shuffled_dataset_bert
+model name: Transformer
+model_parameters: {'d_inner': 128, 'd_k': 32, 'd_v': 32, 'n_head': 4, 'n_layers': 4, 'dropout': 0.1, 'use_star': True}
+batch size: 32
+num_epochs: 10
+loss type: SigmoidFocalCrossEntropy
+optimizer: Adam
+learning rate: 0.002
+
+Train performance at epoch 1 is precision: 0.521495, recall: 0.521495, fscore: 0.521495, macro-fscore: 0.342752, right: 1395, predict: 2675, standard: 2675.
+Loss is: 0.096411.
+Validate performance at epoch 1 is precision: 0.500747, recall: 0.500747, fscore: 0.500747, macro-fscore: 0.333665, right: 335, predict: 669, standard: 669.
+Loss is: 0.098296.
+test performance at epoch 1 is precision: 0.507623, recall: 0.507623, fscore: 0.507623, macro-fscore: 0.336704, right: 566, predict: 1115, standard: 1115.
+Loss is: 0.096911.
+Epoch 1 cost time: 19 second
+Train performance at epoch 2 is precision: 0.775701, recall: 0.775701, fscore: 0.775701, macro-fscore: 0.784138, right: 2075, predict: 2675, standard: 2675.
+Loss is: 0.062708.
+Validate performance at epoch 2 is precision: 0.787743, recall: 0.787743, fscore: 0.787743, macro-fscore: 0.796907, right: 527, predict: 669, standard: 669.
+Loss is: 0.062072.
+test performance at epoch 2 is precision: 0.775785, recall: 0.775785, fscore: 0.775785, macro-fscore: 0.783320, right: 865, predict: 1115, standard: 1115.
+Loss is: 0.063627.
+Epoch 2 cost time: 18 second
+Train performance at epoch 3 is precision: 0.584673, recall: 0.584673, fscore: 0.584673, macro-fscore: 0.630102, right: 1564, predict: 2675, standard: 2675.
+Loss is: 0.072550.
+Validate performance at epoch 3 is precision: 0.572496, recall: 0.572496, fscore: 0.572496, macro-fscore: 0.630358, right: 383, predict: 669, standard: 669.
+Loss is: 0.072368.
+test performance at epoch 3 is precision: 0.556054, recall: 0.556054, fscore: 0.556054, macro-fscore: 0.601505, right: 620, predict: 1115, standard: 1115.
+Loss is: 0.072975.
+Epoch 3 cost time: 18 second
+Train performance at epoch 4 is precision: 0.791776, recall: 0.791776, fscore: 0.791776, macro-fscore: 0.806449, right: 2118, predict: 2675, standard: 2675.
+Loss is: 0.069052.
+Validate performance at epoch 4 is precision: 0.780269, recall: 0.780269, fscore: 0.780269, macro-fscore: 0.795200, right: 522, predict: 669, standard: 669.
+Loss is: 0.069649.
+test performance at epoch 4 is precision: 0.767713, recall: 0.767713, fscore: 0.767713, macro-fscore: 0.781015, right: 856, predict: 1115, standard: 1115.
+Loss is: 0.069519.
+Epoch 4 cost time: 18 second
+Train performance at epoch 5 is precision: 0.848972, recall: 0.848972, fscore: 0.848972, macro-fscore: 0.860828, right: 2271, predict: 2675, standard: 2675.
+Loss is: 0.043911.
+Validate performance at epoch 5 is precision: 0.823617, recall: 0.823617, fscore: 0.823617, macro-fscore: 0.840643, right: 551, predict: 669, standard: 669.
+Loss is: 0.047117.
+test performance at epoch 5 is precision: 0.841256, recall: 0.841256, fscore: 0.841256, macro-fscore: 0.853606, right: 938, predict: 1115, standard: 1115.
+Loss is: 0.046791.
+Epoch 5 cost time: 18 second
+Train performance at epoch 6 is precision: 0.942056, recall: 0.942056, fscore: 0.942056, macro-fscore: 0.942272, right: 2520, predict: 2675, standard: 2675.
+Loss is: 0.028920.
+Validate performance at epoch 6 is precision: 0.908819, recall: 0.908819, fscore: 0.908819, macro-fscore: 0.908911, right: 608, predict: 669, standard: 669.
+Loss is: 0.033931.
+test performance at epoch 6 is precision: 0.910314, recall: 0.910314, fscore: 0.910314, macro-fscore: 0.910359, right: 1015, predict: 1115, standard: 1115.
+Loss is: 0.034466.
+Epoch 6 cost time: 18 second
+Train performance at epoch 7 is precision: 0.888224, recall: 0.888224, fscore: 0.888224, macro-fscore: 0.898324, right: 2376, predict: 2675, standard: 2675.
+Loss is: 0.030937.
+Validate performance at epoch 7 is precision: 0.852018, recall: 0.852018, fscore: 0.852018, macro-fscore: 0.865268, right: 570, predict: 669, standard: 669.
+Loss is: 0.036035.
+test performance at epoch 7 is precision: 0.855605, recall: 0.855605, fscore: 0.855605, macro-fscore: 0.868763, right: 954, predict: 1115, standard: 1115.
+Loss is: 0.038311.
+Epoch 7 cost time: 18 second
+Train performance at epoch 8 is precision: 0.985047, recall: 0.985047, fscore: 0.985047, macro-fscore: 0.985044, right: 2635, predict: 2675, standard: 2675.
+Loss is: 0.013558.
+Validate performance at epoch 8 is precision: 0.941704, recall: 0.941704, fscore: 0.941704, macro-fscore: 0.941946, right: 630, predict: 669, standard: 669.
+Loss is: 0.020036.
+test performance at epoch 8 is precision: 0.942601, recall: 0.942601, fscore: 0.942601, macro-fscore: 0.942795, right: 1051, predict: 1115, standard: 1115.
+Loss is: 0.021493.
+Epoch 8 cost time: 18 second
+Train performance at epoch 9 is precision: 0.984299, recall: 0.984299, fscore: 0.984299, macro-fscore: 0.984489, right: 2633, predict: 2675, standard: 2675.
+Loss is: 0.009790.
+Validate performance at epoch 9 is precision: 0.955157, recall: 0.955157, fscore: 0.955157, macro-fscore: 0.956533, right: 639, predict: 669, standard: 669.
+Loss is: 0.017875.
+test performance at epoch 9 is precision: 0.933632, recall: 0.933632, fscore: 0.933632, macro-fscore: 0.935427, right: 1041, predict: 1115, standard: 1115.
+Loss is: 0.019853.
+Epoch 9 cost time: 18 second
+Train performance at epoch 10 is precision: 0.997383, recall: 0.997383, fscore: 0.997383, macro-fscore: 0.997380, right: 2668, predict: 2675, standard: 2675.
+Loss is: 0.005710.
+Validate performance at epoch 10 is precision: 0.944694, recall: 0.944694, fscore: 0.944694, macro-fscore: 0.945145, right: 632, predict: 669, standard: 669.
+Loss is: 0.017633.
+test performance at epoch 10 is precision: 0.949776, recall: 0.949776, fscore: 0.949776, macro-fscore: 0.949781, right: 1059, predict: 1115, standard: 1115.
+Loss is: 0.020804.
+Epoch 10 cost time: 18 second
+Best test performance at epoch 9 is precision: 0.933632, recall: 0.933632, fscore: 0.933632, macro-fscore: 0.935427, right: 1041, predict: 1115, standard: 1115.
+Loss is: 0.019853.
