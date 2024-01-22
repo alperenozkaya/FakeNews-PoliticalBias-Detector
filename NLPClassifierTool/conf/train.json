@@ -7,17 +7,17 @@
     },
     "device": "cuda",
     "model_name": "Transformer",
-    "checkpoint_dir": "checkpoint_dir_transformer_3_layer_sigmoid_BERT",
+    "checkpoint_dir": "bert_w_unique_token_tr_mc4",
     "model_dir": "trained_model_rcv1",
     "data": {
         "train_json_files": [
-            "data/combined_dataset-data_train.json"
+            "data/shuffled_dataset_bert_128k-data_train.json"
         ],
         "validate_json_files": [
-            "data/combined_dataset-data_val.json"
+            "data/shuffled_dataset_bert_128k-data_val.json"
         ],
         "test_json_files": [
-            "data/combined_dataset-data_test.json"
+            "data/shuffled_dataset_bert_128k-data_test.json"
         ],
         "generate_dict_using_json_files": true,
         "generate_dict_using_all_json_files": true,
@@ -44,13 +44,13 @@
         "max_token_len": 256,
         "max_char_len": 1024,
         "max_char_len_per_token": 4,
-        "token_pretrained_file": "reduced_embeddings_dict.pkl",
+        "token_pretrained_file": "r_turkish_berturk_128k.pkl",
         "keyword_pretrained_file": ""
     },
     "train": {
         "batch_size": 32,
         "start_epoch": 1,
-        "num_epochs": 4,
+        "num_epochs": 10,
         "num_epochs_static_embedding": 0,
         "decay_steps": 1000,
         "decay_rate": 1.0,
@@ -110,7 +110,7 @@
         "batch_size": 1024,
         "is_flat": true,
         "top_k": 100,
-        "model_dir": "checkpoint_dir_transformer/Transformer_best"
+        "model_dir": "Transformer_best"
     },
     "TextVDCNN": {
         "vdcnn_depth": 9,
@@ -170,6 +170,5 @@
         "logger_file": "log_test_rcv1_hierar",
         "log_level": "warn"
     },
-    "dataset_name": "shuffled_dataset"
-
+    "dataset_name": "shuffled_dataset_bert_128k"
 }

@@ -5,6 +5,8 @@ from torch.utils.data import Dataset, DataLoader
 from collections import Counter
 from torch.nn.utils.rnn import pad_sequence
 import numpy as np
+from transformers import BertTokenizer, AutoTokenizer
+
 
 # Define the fake news classifier model
 class FakeNewsClassifier(nn.Module):

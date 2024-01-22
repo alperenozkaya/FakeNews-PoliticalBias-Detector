@@ -9,17 +9,31 @@ import numpy as np
 import predict
 
 from config import Config
+from transformers import BertTokenizer,AutoTokenizer
 
 
 # Ensure NLTK tokenizers are downloaded
 nltk.download('punkt')
+bert_tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
 
+
+def electra_tokenize(text):
+    turkish_tokenizer = AutoTokenizer.from_pretrained("dbmdz/electra-base-turkish-mc4-uncased-discriminator")
+
+    encoded_input = turkish_tokenizer(text, add_special_tokens=True)
+    tokens = encoded_input.tokens()
+    # Exclude special tokens
+    tokens = [token for token in tokens if token not in turkish_tokenizer.all_special_tokens]
+    return tokens
 
 # Function to tokenize text, convert to lowercase, and filter out non-alphabetic characters
 def tokenize(text):
     tokens = nltk.word_tokenize(text)
     return [token.lower() for token in tokens if token.isalpha()]
 
+def bert_tokenize_text(text):
+    text = text.lower()
+    return bert_tokenizer.tokenize(text)
 
 def tokenize_text_to_json_file(text, output_dir, file_name="predict.json"):
     # Create output directory if it doesn't exist
@@ -27,7 +41,7 @@ def tokenize_text_to_json_file(text, output_dir, file_name="predict.json"):
         os.makedirs(output_dir)
 
     # Tokenize the text
-    doc_token = tokenize(text)
+    doc_token = electra_tokenize(text)
 
     # Prepare the JSON data with only tokens
     json_data = {
@@ -79,3 +93,7 @@ def predict_label(text):
     return predict_label_name, predict_label_prob
 
 
+text = 'erdoğan'
+
+predict_label_name, predict_label_prob = predict_label(text)
+print(f'Predicted label: {predict_label_name}')

@@ -9,7 +9,7 @@ from transformers import AutoTokenizer, AutoModel
 
 # Ensure you have the necessary package
 nltk.download('punkt')
-tokenizer = AutoTokenizer.from_pretrained('dbmdz/convbert-base-turkish-mc4-uncased')
+tokenizer = AutoTokenizer.from_pretrained("dbmdz/bert-base-turkish-128k-uncased")
 
 def nltk_tokenize_text(text):
     # Tokenizes the text using NLTK
@@ -20,13 +20,14 @@ def nltk_tokenize_text(text):
 def bert_tokenize_text(text):
     text = text.lower()
     text = text.translate(str.maketrans('', '', string.punctuation))
-    return tokenizer.tokenize(text)
+    text_tokens = tokenizer.tokenize(text, max_length=2048, truncation=True, padding='max_length', return_tensors='pt')
+    return text_tokens
 
 def process_file(filepath, doc_label):
     # Process a single file and return its JSON representation
     with open(filepath, 'r', encoding='utf-8') as file:
         text = file.read()
-        tokens = bert_tokenize_text(text)
+        tokens = nltk_tokenize_text(text)
 
         return {
             'doc_label': [doc_label],
@@ -59,7 +60,7 @@ def main():
     random.shuffle(all_documents)
 
     # Write the shuffled documents to a JSON file
-    with open('shuffled_dataset_bert.json', 'w', encoding='utf-8') as output_file:
+    with open('../JsonParser/formatted_datasets_json/shuffled_dataset_to_analyze.json', 'w', encoding='utf-8') as output_file:
         for document in all_documents:
             json.dump(document, output_file)
             output_file.write('\n')

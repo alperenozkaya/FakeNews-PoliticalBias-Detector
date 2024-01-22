@@ -102,7 +102,8 @@ val_loader = DataLoader(NewsDataset(val_data, vocab), batch_size=4, shuffle=Fals
 test_loader = DataLoader(NewsDataset(test_data, vocab), batch_size=4, shuffle=False, collate_fn=NewsDataset.collate_fn)
 
 # Initialize the model with the same constants as before
-model = FakeNewsClassifier(vocab_size, embedding_dim=100, hidden_dim=128, output_dim=1, dropout_prob=0.3)
+# model = FakeNewsClassifier(vocab_size, embedding_dim=100, hidden_dim=128, output_dim=1, dropout_prob=0.3) # ORIGINAL
+model = FakeNewsClassifier(vocab_size, embedding_dim=128, hidden_dim=128, output_dim=1, dropout_prob=0.3)
 
 # Define loss and optimizer
 criterion = nn.BCELoss()

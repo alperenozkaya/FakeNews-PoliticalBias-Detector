@@ -1,4 +1,4 @@
-from transformers import BertTokenizer, BertModel
+from transformers import AutoTokenizer, AutoModel
 import torch
 import json
 import pickle
@@ -6,7 +6,6 @@ from tqdm import tqdm
 import numpy as np
 from torch.utils.data import Dataset, DataLoader
 import gc
-from transformers import AutoTokenizer, AutoModel
 
 class TokenizedTextDataset(Dataset):
     def __init__(self, tokenized_texts, tokenizer_dl, max_len=512):
@@ -19,21 +18,22 @@ class TokenizedTextDataset(Dataset):
 
     def __getitem__(self, idx):
         tokens = self.tokenized_texts[idx]
-        encoded_list = [self.tokenizer.encode(token, add_special_tokens=True) for token in tokens]
-        input_idx = [item for sublist in encoded_list for item in sublist][:self.max_len]  # Flatten and truncate
+        encoded_list = [self.tokenizer.encode(token, add_special_tokens=False) for token in tokens]
+        input_idx = [item for sublist in encoded_list for item in sublist]
+
+        if len(input_idx) > self.max_len:
+            input_idx = input_idx[:self.max_len - 1] + [self.tokenizer.sep_token_id]
         attention_mask_dl = [1] * len(input_idx)
 
-        # Padding if necessary
         padding_length = self.max_len - len(input_idx)
         if padding_length > 0:
-            input_idx = input_idx + ([0] * padding_length)
-            attention_mask_dl = attention_mask_dl + ([0] * padding_length)
+            input_idx += [self.tokenizer.pad_token_id] * padding_length
+            attention_mask_dl += [0] * padding_length
 
         return {
             'input_ids': torch.tensor(input_idx),
             'attention_mask': torch.tensor(attention_mask_dl)
         }
-
 
 # Set the device to GPU (cuda) if available, otherwise stick with CPU
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -57,14 +57,7 @@ dataset = TokenizedTextDataset(input_data, tokenizer)
 loader = DataLoader(dataset, batch_size=32, shuffle=False)
 
 embeddings_sum_dict = {}
-word_embeddings_dict = {}
 token_count_dict = {}
-
-# Flatten the input_data to align with the batches
-flat_input_data = [token for sublist in input_data for token in sublist]
-
-# Dictionary to track the current position in flat_input_data
-current_position = 0
 
 for batch in tqdm(loader, desc="Processing Batches"):
     input_ids = batch['input_ids'].to(device)
@@ -72,41 +65,37 @@ for batch in tqdm(loader, desc="Processing Batches"):
 
     with torch.no_grad():
         outputs = model(input_ids, attention_mask=attention_mask)
-        # Get the embeddings for all tokens
         embeddings = outputs.last_hidden_state.cpu().numpy()
 
-    # Process each token in the batch
     for i in range(embeddings.shape[0]):
         seq_len = sum(batch['attention_mask'][i])
-        for j in range(1, seq_len - 1):
+
+        for j in range(seq_len):
             token_id = input_ids[i][j].item()
             token = tokenizer.convert_ids_to_tokens(token_id)
-            token_embedding = embeddings[i, j, :]
 
-            # Store or update the embeddings for the token
-            if token not in ['[CLS]', '[SEP]']:  # Exclude CLS and SEP tokens
-                token_embedding = token_embedding.astype(np.float32)
-                if token in word_embeddings_dict:
-                    #word_embeddings_dict[token].append(token_embedding)
+            if token not in [tokenizer.cls_token, tokenizer.sep_token, tokenizer.pad_token]:
+                token_embedding = embeddings[i, j, :].astype(np.float32)
+
+                if token in embeddings_sum_dict:
                     embeddings_sum_dict[token] += token_embedding
                     token_count_dict[token] += 1
-
                 else:
-                    #word_embeddings_dict[token] = [token_embedding]
                     embeddings_sum_dict[token] = token_embedding
                     token_count_dict[token] = 1
 
-    # After processing each batch, explicitly free up memory
     del input_ids, attention_mask, outputs, embeddings
     torch.cuda.empty_cache()
     gc.collect()
 
-
-# Average the embeddings
 for token in embeddings_sum_dict:
     embeddings_sum_dict[token] /= token_count_dict[token]
 
-
 # Save the dictionary using pickle
-with open('../NLPClassifierTool/embeddings_dict_bert_tr_mc4.pkl', 'wb') as file:
+with open('../NLPClassifierTool/test_embeddings.pkl', 'wb') as file:
     pickle.dump(embeddings_sum_dict, file)
+
+# Diagnostic Logging
+print(f"Total unique tokens: {len(embeddings_sum_dict)}")
+for token, count in sorted(token_count_dict.items(), key=lambda x: x[1], reverse=True)[:10]:
+    print(f"Token: {token}, Count: {count}")

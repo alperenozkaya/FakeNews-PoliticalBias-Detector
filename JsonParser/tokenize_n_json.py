@@ -18,6 +18,8 @@ def tokenize(text):
 
 
 def bert_tokenize(text):
+    # remove any emojis/chinese/japanese characters
+    text = text.encode('ascii', 'ignore').decode('ascii')
     tokens = tokenizer.tokenize(text)
     return tokens
 
