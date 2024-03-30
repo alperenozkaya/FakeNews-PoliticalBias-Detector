@@ -1,5 +1,6 @@
-macro_average, precision: 0.500000, recall: 0.495614, fscore: 0.497797, 
-micro_average, precision: 0.991228, recall: 0.991228, fscore: 0.991228, right_count: 113, predict_count: 114, standard_count: 114
+macro_average, precision: 0.845177, recall: 0.638440, fscore: 0.727404, 
+micro_average, precision: 0.845976, recall: 0.633383, fscore: 0.724404, right_count: 9870, predict_count: 11667, standard_count: 15583
 
-real, precision: 0.000000, recall: 0.000000, fscore: 0.000000, right_count: 0, predict_count: 1, standard_count: 0
-fake, precision: 1.000000, recall: 0.991228, fscore: 0.995595, right_count: 113, predict_count: 113, standard_count: 114
+left, precision: 0.848395, recall: 0.650899, fscore: 0.736639, right_count: 4018, predict_count: 4736, standard_count: 6173
+right, precision: 0.862174, recall: 0.568581, fscore: 0.685255, right_count: 3109, predict_count: 3606, standard_count: 5468
+center, precision: 0.824962, recall: 0.695840, fscore: 0.754919, right_count: 2743, predict_count: 3325, standard_count: 3942

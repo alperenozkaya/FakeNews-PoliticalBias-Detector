@@ -56,6 +56,8 @@ class NewsDataset(Dataset):
         labels = torch.tensor(labels, dtype=torch.float)
         return texts_padded, labels
 
+
+
 # Function to create a vocabulary
 def build_vocab(data, min_freq=1):
     counter = Counter()

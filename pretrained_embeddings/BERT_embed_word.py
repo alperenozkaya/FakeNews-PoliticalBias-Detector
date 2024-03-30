@@ -42,7 +42,7 @@ print("device: ", device)
 # Load the tokenizer and model
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 model = BertModel.from_pretrained('bert-base-uncased')
-text_path = '../JsonParser/formatted_datasets_json/bert_combined.json'
+text_path = '../JsonParser/formatted_datasets_json/bias_combined.json'
 model.to(device)
 
 # Load the data
@@ -107,5 +107,5 @@ for token in embeddings_sum_dict:
 
 
 # Save the dictionary using pickle
-with open('../NLPClassifierTool/embeddings_dict_nltk.pkl', 'wb') as file:
+with open('../NLPClassifierTool/bias_embeddings_dict_nltk.pkl', 'wb') as file:
     pickle.dump(embeddings_sum_dict, file)
