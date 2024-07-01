@@ -7,7 +7,7 @@
     "json_parser": {
         "input_dir": "formatted_datasets",
         "output_dir": "formatted_datasets_json",
-        "dataset_name": "bias_combined.json"
+        "dataset_name": "cleaned_combined_data_w3.json"
 
     }
 }

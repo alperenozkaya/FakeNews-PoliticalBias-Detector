@@ -5,7 +5,7 @@ import json
 from config import Config
 from transformers import BertTokenizer
 
-tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+tokenizer = BertTokenizer.from_pretrained('dbmdz/bert-base-turkish-uncased')
 
 # Ensure NLTK tokenizers are downloaded
 nltk.download('punkt')

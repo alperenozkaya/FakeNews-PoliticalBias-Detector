@@ -14,16 +14,15 @@ avg_type = 'macro' # for classification, use 'macro' or 'micro' for multi-class 
 word_embeddings_dict = {}
 batch_size = 32
 learning_rate = 0.001
-dropout = 0.2
+dropout = 0.1
 num_epochs = 10
-d_model = 256
+d_model = 128
 n_head = 4 # attention heads
-num_encoder_layers = 6 # number of transformer layers
+num_encoder_layers = 2 # number of transformer layers
 data_path = '../JsonParser/formatted_datasets_json/bias_combined.json'
 embedding_path = '../NLPClassifierTool/r_bias_embeddings.pkl'
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 bert_model = BertModel.from_pretrained('bert-base-uncased')
-num_epochs = 12
 embedding_dim = 128
 output_dim = 3 #1 => binary classification.
 
@@ -70,15 +69,15 @@ class TextDataset(Dataset):
 class TransformerModel(nn.Module):
     def __init__(self):
         super(TransformerModel, self).__init__()
-        self.encoder_layer = nn.TransformerEncoderLayer(d_model=128, nhead=n_head, dropout=dropout)
+        self.encoder_layer = nn.TransformerEncoderLayer(d_model=d_model, nhead=n_head, dropout=dropout)
         self.transformer_encoder = nn.TransformerEncoder(self.encoder_layer, num_layers=num_encoder_layers)
-        self.fc = nn.Linear(128, output_dim) # Assuming binary classification
+        self.fc = nn.Linear(d_model, output_dim) # Assuming binary classification
 
     def forward(self, src):
         src = self.transformer_encoder(src)
         src = src.mean(dim=1) # Pooling
         output = self.fc(src)
-        output_sig = torch.sigmoid(output) # yields better results in binary classification
+        # output_sig = torch.sigmoid(output) # yields better results in binary classification
         return output
 
 

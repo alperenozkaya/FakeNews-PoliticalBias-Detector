@@ -78,10 +78,17 @@ def predict_label(text):
     if not is_multi:
         predict_label_id = predict_prob.argmax()
         if predict_label_id == 0:
-            predict_label_name = 'real'
+            predict_label_name = 'left'
+        elif predict_label_id == 1:
+            predict_label_name = 'right'
         else:
-            predict_label_name = 'fake'
-        predict_label_prob = "{:.3f}".format(predict_prob[0][predict_label_id])
+            predict_label_name = 'center'
+
+        predict_label_prob = "{:.3f}".format(predict_prob[0][int(predict_label_id)])
+        temperature = 0.333
+        log_probs = np.log(predict_prob)
+        softmax_probs = np.exp(log_probs / temperature) / np.sum(np.exp(log_probs / temperature), axis=1, keepdims=True)
+        predict_label_prob = "{:.3f}".format(softmax_probs[0][int(predict_label_id)])
     else:
         predict_label_idx = np.argsort(-predict_prob)
         top_label_id = predict_label_idx[0]  # Taking the top label
@@ -92,8 +99,10 @@ def predict_label(text):
         predict_label_prob = "{:.3f}".format(predict_prob[0][top_label_id])
     return predict_label_name, predict_label_prob
 
-
-text = 'erdoğan'
+text_f = 'f_test.txt'
+with open(text_f, 'r', encoding='utf-8') as file:
+    text = file.read()
 
 predict_label_name, predict_label_prob = predict_label(text)
 print(f'Predicted label: {predict_label_name}')
+print(f'Predicted probability: {predict_label_prob}')

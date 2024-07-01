@@ -45,6 +45,8 @@ model = BertModel.from_pretrained('bert-base-uncased')
 text_path = '../JsonParser/formatted_datasets_json/bias_combined.json'
 model.to(device)
 
+batch_size = 64
+
 # Load the data
 with open(text_path, 'r') as file:
     data = [json.loads(line) for line in file]
@@ -53,7 +55,7 @@ input_data = [item['doc_token'] for item in data]
 
 # Dictionary to hold embeddings
 dataset = TokenizedTextDataset(input_data, tokenizer)
-loader = DataLoader(dataset, batch_size=32, shuffle=False)
+loader = DataLoader(dataset, batch_size=batch_size, shuffle=False)
 
 embeddings_sum_dict = {}
 word_embeddings_dict = {}

@@ -43,7 +43,7 @@ print("device: ", device)
 tokenizer = AutoTokenizer.from_pretrained("dbmdz/convbert-base-turkish-mc4-uncased")
 model = AutoModel.from_pretrained("dbmdz/convbert-base-turkish-mc4-uncased")
 
-text_path = '../TurkishDataset/shuffled_dataset_bert.json'
+text_path = '../JsonParser/formatted_datasets_json/cleaned_combined_data_1.json'
 model.to(device)
 
 # Load the data
@@ -92,7 +92,7 @@ for token in embeddings_sum_dict:
     embeddings_sum_dict[token] /= token_count_dict[token]
 
 # Save the dictionary using pickle
-with open('../NLPClassifierTool/test_embeddings.pkl', 'wb') as file:
+with open('../NLPClassifierTool/turkish_embeddings.pkl', 'wb') as file:
     pickle.dump(embeddings_sum_dict, file)
 
 # Diagnostic Logging
